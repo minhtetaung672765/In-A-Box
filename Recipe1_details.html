@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="C:/Bootstrap 4/css/bootstrap.min.css">
+    <script src="C:/Bootstrap 4/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"> <!--social icons-->
+
+
+    <title>Spaghetti Carbonara - The Amazing recipe - In A Box</title>
+
+    <style type="text/css" >
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&family=PT+Serif:ital,wght@1,700&family=Caveat:wght@700&family=Open+Sans:wght@500&family=Montserrat:wght@500&display=swap');
+
+        .navbar-custom {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 500;
+            background-color: white ; 
+            padding: 15px 0; 
+            border-bottom: 1px solid grey;
+        }       
+        .navbar-custom .nav-link, .navbar-custom .btn, .dropdown-item {
+            color: black;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .dropdown-item{
+          margin-bottom: 15px;
+        }
+        .navbar-custom .dropdown .btn {  /* dropdown nav */
+            background-color: transparent; 
+            border: none;
+            color: black;
+        }
+        #sign-up{
+          border: 1px solid #bbbcb8;
+          padding: 10px;
+        }
+        #sign-up:hover{
+          border: 1px solid navy;
+        }
+        #log-in{
+          color: white;
+          background-color: navy;
+          padding: 10px 15px;
+          box-shadow: 1px 1px 3px #000;
+        }
+        #log-in:hover{
+          background-color: #56179b;
+        }
+        /*  Navigation bar customization */
+
+         .nav-item , .dropdown .btn {
+          position: relative;
+          padding: 0;
+          margin-right: 20px;
+        }
+         .nav-item .nav-link{
+          padding: 10px 0 10px 0;
+        }
+         .dropdown .btn {
+          padding: 10px 0 10px 0;
+        }
+         .nav-item .nav-link , .dropdown .btn{
+          position: relative;
+        }
+         .nav-item .nav-link::before , .dropdown .btn::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px; /* Adjust the thickness of the underline */
+          bottom: 0;
+          left: 0;
+        }
+         .nav-item .nav-link:hover::before  , .dropdown .btn:hover::before{
+          background-color: navy; 
+        }
+        #sign-up:hover::before , #log-in:hover::before{
+          background-color: initial;    /* remove underline setting */
+        }
+
+        /*  footer section */
+        footer{
+          background-color: navy;          
+          width: 100%;
+        }
+        .quick-links{
+          list-style: none;
+          padding-left: 0;
+        }
+        ul[class ="quick-links"]> li {
+          margin-bottom: 10px;
+        }
+        ul[class ="quick-links"]> li >a {
+          color: lightblue;
+          font-size: clamp(13px, 5vw, 16px);
+        }
+        .social-icons , .store-icons {
+          font-size: clamp(14px, 4vw, 20px); 
+          margin-bottom: 16px;  /* to ensure spacing when it's responsive */
+        }
+        .icon {
+          margin-right: 10px;  
+        }
+        .icon:hover{
+          color: blue;
+        }
+        div[class="store-icons"] > a{
+          text-decoration: none;
+          font-size: clamp(14px, 4vw, 16px);
+        }
+
+        /* Body contents */
+
+        #main-content{
+          margin-top: 100px;
+        }
+
+        h1{
+          font-size: 30px;
+          font-family: 'Roboto Slab', serif;
+          margin-bottom: 20px;
+        }
+        h2,h3{
+          font-family: 'Roboto Slab', serif;
+          font-size: clamp(18px, 3vw, 25px);
+          padding: 5px;
+        }
+        .separator-icon::before {
+        content: "|";
+        margin: 0 5px; 
+        color: lightgrey; 
+        }
+      .timer-and-description{
+          font-size: 13px;
+          color: grey;
+        }
+        .nutrition-title{
+          font-size: clamp(20px, 1vw, 25px);
+          margin-right: clamp(20px, 3vw, 50px);
+        }
+        .amount{
+          color: navy;
+          font-weight: bold;
+        }
+
+        #Ingredients-card{
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
+          margin-bottom: 20px;
+        }
+
+        #Nutrition-table>tbody>tr>td{
+          padding: 2px;
+          font-size: 14px;
+        }
+        #Instruction-table tbody>tr>td{
+          padding: 12px;
+          font-size: 14px;
+          padding-left: 20px;
+        }
+        #Instruction-table tbody tr {
+            counter-increment: rowNumber;
+        }
+        #Instruction-table tbody tr::before {
+            content: counter(rowNumber);
+            font-weight: bold;
+            margin-right: 5px;
+            padding: 0 4px 4px 4px;
+            background-color: lightgrey;
+            color: blue; 
+        }  
+
+  </style>
+
+</head>
+<body >
+
+    <nav class="navbar navbar-expand-md  navbar-custom">
+        
+        <div class="container-fluid"> <!-- 1st div -->
+            <!-- Move the brand/logo to the left -->
+            <a class="navbar-brand" href="index.html" > 
+              <img src= "https://i.imgur.com/ByUlMbp.jpeg" id="brand-logo" alt="Logo" style="width:130px;"> 
+            </a>
+
+            <!-- Create a separate div to hold the navigation items and align it to the right -->
+            <div class="ml-auto"> <!-- 2nd div -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" 
+                style="padding: 0;">
+                <span class="navbar-toggler-icon">
+                  <!-- using bootsrap svg for icon-->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M3 2.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+                    </svg>
+                </span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="collapsibleNavbar"> <!-- 3rd div -->
+
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                          
+                          <div class="dropdown">
+                              <div class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                Services & Products
+                              </div>
+                              <div class="dropdown-menu">
+                                <a class="dropdown-item" href="Recipes.html">Recipes</a>
+                                <a class="dropdown-item" href="BakeHomeSet.html">Bake-at-home sets</a>
+                                <a class="dropdown-item" href="Ingredients.html">Ingredients</a>
+                                <div class="dropdown-header" style="font-size: 13px; color:grey; padding:1;">
+                                Other items
+                                </div>
+                                <a class="dropdown-item" href="MealPlanner.html">Meal planners</a>
+                                <a class="dropdown-item" href="NutritionApps.html">Nutrition information apps</a>
+                                <a class="dropdown-item" href="WeeklyRecipes.html">Selection of weekly recipe choices</a>
+                                <a class="dropdown-item" href="Giftboxes.html">Giftboxes</a>
+                              </div>
+                            </div>
+
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="Packages.html">Packages</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="SignUp.html" id="sign-up">Sign Up</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="LogIn.html" id="log-in">Log In</a>
+                        </li>
+                    </ul>
+
+                </div> <!-- 3rd div -->
+            </div> <!-- 2nd div -->
+        </div> <!-- 1st div -->
+    </nav>
+
+<!-- Start of body contents-->
+    
+   		<div id="main-content" class="container-fluid" >
+		      <div class="row" >
+  		    	   <div class="col-sm-6">
+
+                    <div id="demo" class="carousel slide" data-ride="carousel">
+
+                          <!-- Indicators -->
+                          <ul class="carousel-indicators">
+                            <li data-target="#demo" data-slide-to="0" class="active"></li>
+                            <li data-target="#demo" data-slide-to="1"></li>
+                          </ul>
+
+                          <!-- The slideshow -->
+                          <div class="carousel-inner">
+                            <div class="carousel-item active">
+                              <img src="https://cdn.foodaciously.com/static/recipes/a228aba0-8e2e-42c1-a328-e3b890933fe4/salmon-carbonara-pasta-without-cream-recipe-677e9c40aad2922b0f084b7b3ca96517-960.jpg" style="width: 100%;"
+                               alt="Spaghetti Carbonara">
+                            </div>
+                            <div class="carousel-item">
+                              <img src="https://www.allrecipes.com/thmb/Vg2cRidr2zcYhWGvPD8M18xM_WY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/11973-spaghetti-carbonara-ii-DDMFS-4x3-6edea51e421e4457ac0c3269f3be5157.jpg" style="width: 100%;"
+                                alt="Spaghetti Carbonara">
+                            </div>
+                          </div>
+
+                          <!-- Left and right controls -->
+                          <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                            <span class="carousel-control-prev-icon" ></span>
+                          </a>
+                          <a class="carousel-control-next" href="#demo" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                          </a>
+
+                    </div>
+ 
+               </div>
+      	       <div class="col-sm-6">
+                   <h1>Spaghetti Carbonara</h1>
+                   <p class="timer-and-description">Cooking time : <b style="color: black;"> 20min</b> <span class="separator-icon"></span> Easy Cleanup, Low sugar, High pretein</p> <br>
+                   <p>A classic Italian pasta dish made with eggs, cheese, pancetta or bacon, and black pepper. It's simple, creamy, and incredibly delicious.</p>
+                   <span class="nutrition-title">Nutrition Information</span> <span class="amount">1 serving<span class="separator-icon"></span>230g</span><br>
+
+                     <table id="Nutrition-table" class="table table-striped ">
+                          <tbody>
+                                <tr>
+                                    <td>Calories</td>
+                                    <td>500-600 kcal</td>                       
+                                </tr>
+                                <tr>
+                                    <td>Protein</td>
+                                    <td>15-20g</td>                        
+                                </tr>
+                                <tr>
+                                    <td>Carbohydrates</td>
+                                    <td>45-50g</td>                      
+                                </tr>
+                                <tr>
+                                    <td>Dietary Fiber</td>
+                                    <td>2-3g</td>                      
+                                </tr>
+                                <tr>
+                                    <td>Sugars</td>
+                                    <td>1-2g</td>                      
+                                </tr>
+                                <tr>
+                                    <td>Fat</td>
+                                    <td>25-30g</td>                      
+                                </tr>
+                                <tr>
+                                    <td>Saturated Fat</td>
+                                    <td>10-12g</td>                      
+                                </tr>
+                                <tr>
+                                    <td>Cholesterol</td>
+                                    <td>90-100mg</td>                      
+                                </tr>
+                                <tr>
+                                    <td>Sodium</td>
+                                    <td>400-500mg</td>                      
+                                </tr>
+                          </tbody>
+                    </table>
+
+               </div>
+   			  </div>
+   		</div><br><br>
+
+
+      <div class="container-fluid" >
+          <div class="row" >
+               <div id="Ingredients-card" class="col-sm-3">
+                    <h2>Ingredients</h2>
+                    <ul>
+                      <li>200-250 grams of spaghetti</li>
+                      <li>2 large eggs</li>
+                      <li>100 grams of grated Pecorino Romano cheese (or Parmesan)</li>
+                      <li>100 grams of pancetta or guanciale (Italian cured pork), diced</li>
+                      <li>2 cloves of garlic, minced</li>
+                      <li>Freshly ground black pepper</li>
+                      <li>Fresh parsley, chopped (for garnish)</li>
+                    </ul>
+               </div><br>
+               <div class="col-sm-9">
+                <h3>Instruction (How to cook)</h3>
+                 <table id="Instruction-table" class="table table-striped ">
+                          <tbody>
+                                <tr>
+                                    <td>Cook the spaghetti: Bring a large pot of salted water to a boil. Add the spaghetti and cook according to the package instructions until al dente. Reserve about 1/2 cup of pasta cooking water, then drain the pasta.</td>                       
+                                </tr>
+                                <tr>
+                                    <td>Cook the pancetta: In a large skillet over medium heat, cook the diced pancetta until it's crispy and golden brown. Remove it from the skillet and place it on paper towels to drain excess fat. Leave some fat in the skillet.</td>                       
+                                </tr>
+                                <tr>
+                                    <td>Make the sauce: In a bowl, whisk together the eggs, grated cheese, minced garlic, and a generous amount of freshly ground black pepper. Mix until well combined.</td>                     
+                                </tr>
+                                <tr>
+                                    <td> Combine the ingredients: While the cooked pasta is still hot, return it to the pot it was cooked in. Pour the egg and cheese mixture over the pasta and toss quickly to combine. The heat from the pasta will cook the eggs, creating a creamy sauce. If it's too thick, add some of the reserved pasta cooking water gradually until you reach your desired consistency.</td>                      
+                                </tr>
+                                <tr>
+                                    <td>Add the pancetta: Gently fold in the crispy pancetta pieces.</td>                     
+                                </tr>
+                                <tr>
+                                    <td>Serve: Garnish with freshly chopped parsley and additional grated cheese if desired. Serve immediately while it's hot.</td>                     
+                                </tr>
+                          </tbody>
+                    </table>
+               </div>
+          </div>
+      </div><br><br>
+
+
+
+<footer>
+
+    <br>
+    <div class="container-fluid">
+        <div class ="row">
+             <div class="col-sm-2"></div>
+             <div class="col-sm-3">    
+                <p style="color: white; font-size: clamp(13px, 5vw, 16px);">Customer support</p>  
+                    <ul class="quick-links"> 
+                        <li> <a href="AboutUs.html">About us</a> </li>
+                        <li> <a href="AboutUs.html#contact-us">Contact us</a> </li>
+                    </ul>      
+             </div>           
+             <div class="col-sm-3">
+                <p style="color: white; font-size: clamp(13px, 5vw, 16px);">Follow us</p>
+                    <div class="social-icons">
+                      <a href="https://www.facebook.com/" class="icon"><i class="fab fa-facebook-f"></i></a>
+                      <a href="https://www.instagram.com/" class="icon"><i class="fab fa-instagram"></i></a>
+                      <a href="https://www.pinterest.com/" class="icon"><i class="fab fa-pinterest-p"></i></a>
+                      <a href="https://www.tiktok.com/" class="icon"><i class="fab fa-tiktok"></i></a>
+                    </div>
+             </div>
+             <div class="col-sm-3">
+                <p style="color: white; font-size: clamp(13px, 5vw, 16px);">Download our app</p>
+                    <div class="store-icons">
+                      <a href="https://play.google.com/" class="icon"><i class="fab fa-google-play"></i> Google play store</a>
+                      <br>
+                      <a href="https://www.apple.com/app-store/" class="icon"><i class="fab fa-apple"></i> App store</a>
+                    </div>
+             </div>
+             <div class="col-sm-1"></div>
+        </div>
+    </div> <br>
+
+</footer>
+    
+</body>
+</html>

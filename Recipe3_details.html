@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="C:/Bootstrap 4/css/bootstrap.min.css">
+    <script src="C:/Bootstrap 4/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"> <!--social icons-->
+
+
+    <title>Vegetables Stir-fry - The Amazing recipe - In A Box</title>
+
+    <style type="text/css" >
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&family=PT+Serif:ital,wght@1,700&family=Caveat:wght@700&family=Open+Sans:wght@500&family=Montserrat:wght@500&display=swap');
+
+        .navbar-custom {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 500;
+            background-color: white ; 
+            padding: 15px 0; 
+            border-bottom: 1px solid grey;
+        }       
+        .navbar-custom .nav-link, .navbar-custom .btn, .dropdown-item {
+            color: black;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .dropdown-item{
+          margin-bottom: 15px;
+        }
+        .navbar-custom .dropdown .btn {  /* dropdown nav */
+            background-color: transparent; 
+            border: none;
+            color: black;
+        }
+        #sign-up{
+          border: 1px solid #bbbcb8;
+          padding: 10px;
+        }
+        #sign-up:hover{
+          border: 1px solid navy;
+        }
+        #log-in{
+          color: white;
+          background-color: navy;
+          padding: 10px 15px;
+          box-shadow: 1px 1px 3px #000;
+        }
+        #log-in:hover{
+          background-color: #56179b;
+        }
+        /*  Navigation bar customization */
+
+         .nav-item , .dropdown .btn {
+          position: relative;
+          padding: 0;
+          margin-right: 20px;
+        }
+         .nav-item .nav-link{
+          padding: 10px 0 10px 0;
+        }
+         .dropdown .btn {
+          padding: 10px 0 10px 0;
+        }
+         .nav-item .nav-link , .dropdown .btn{
+          position: relative;
+        }
+         .nav-item .nav-link::before , .dropdown .btn::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px; /* Adjust the thickness of the underline */
+          bottom: 0;
+          left: 0;
+        }
+         .nav-item .nav-link:hover::before  , .dropdown .btn:hover::before{
+          background-color: navy; 
+        }
+        #sign-up:hover::before , #log-in:hover::before{
+          background-color: initial;    /* remove underline setting */
+        }
+
+        /*  footer section */
+        footer{
+          background-color: navy;          
+          width: 100%;
+        }
+        .quick-links{
+          list-style: none;
+          padding-left: 0;
+        }
+        ul[class ="quick-links"]> li {
+          margin-bottom: 10px;
+        }
+        ul[class ="quick-links"]> li >a {
+          color: lightblue;
+          font-size: clamp(13px, 5vw, 16px);
+        }
+        .social-icons , .store-icons {
+          font-size: clamp(14px, 4vw, 20px); 
+          margin-bottom: 16px;  /* to ensure spacing when it's responsive */
+        }
+        .icon {
+          margin-right: 10px;  
+        }
+        .icon:hover{
+          color: blue;
+        }
+        div[class="store-icons"] > a{
+          text-decoration: none;
+          font-size: clamp(14px, 4vw, 16px);
+        }
+
+        /* Body contents */
+
+        #main-content{
+          margin-top: 100px;
+        }
+
+        h1{
+          font-size: 30px;
+          font-family: 'Roboto Slab', serif;
+          margin-bottom: 20px;
+        }
+        h2,h3{
+          font-family: 'Roboto Slab', serif;
+          font-size: clamp(18px, 3vw, 25px);
+          padding: 5px;
+        }
+        .separator-icon::before {
+        content: "|";
+        margin: 0 5px; 
+        color: lightgrey; 
+        }
+      .timer-and-description{
+          font-size: 13px;
+          color: grey;
+        }
+        .nutrition-title{
+          font-size: clamp(20px, 1vw, 25px);
+          margin-right: clamp(20px, 3vw, 50px);
+        }
+        .amount{
+          color: navy;
+          font-weight: bold;
+        }
+
+        #Ingredients-card{
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
+          margin-bottom: 20px;
+        }
+
+        #Nutrition-table>tbody>tr>td{
+          padding: 2px;
+          font-size: 14px;
+        }
+        #Instruction-table tbody>tr>td{
+          padding: 18px;
+          font-size: 14px;
+          padding-left: 20px;
+        }
+        #Instruction-table tbody tr {
+            counter-increment: rowNumber;
+        }
+        #Instruction-table tbody tr::before {
+            content: counter(rowNumber);
+            font-weight: bold;
+            margin-right: 5px;
+            padding: 0 4px 4px 4px;
+            background-color: lightgrey;
+            color: blue; 
+        }  
+
+  </style>
+
+</head>
+<body >
+
+    <nav class="navbar navbar-expand-md  navbar-custom">
+        
+        <div class="container-fluid"> <!-- 1st div -->
+            <!-- Move the brand/logo to the left -->
+            <a class="navbar-brand" href="index.html" > 
+              <img src= "https://i.imgur.com/ByUlMbp.jpeg" id="brand-logo" alt="Logo" style="width:130px;"> 
+            </a>
+
+            <!-- Create a separate div to hold the navigation items and align it to the right -->
+            <div class="ml-auto"> <!-- 2nd div -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" 
+                style="padding: 0;">
+                <span class="navbar-toggler-icon">
+                  <!-- using bootsrap svg for icon-->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M3 2.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+                    </svg>
+                </span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="collapsibleNavbar"> <!-- 3rd div -->
+
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                          
+                          <div class="dropdown">
+                              <div class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                Services & Products
+                              </div>
+                              <div class="dropdown-menu">
+                                <a class="dropdown-item" href="Recipes.html">Recipes</a>
+                                <a class="dropdown-item" href="BakeHomeSet.html">Bake-at-home sets</a>
+                                <a class="dropdown-item" href="Ingredients.html">Ingredients</a>
+                                <div class="dropdown-header" style="font-size: 13px; color:grey; padding:1;">
+                                Other items
+                                </div>
+                                <a class="dropdown-item" href="MealPlanner.html">Meal planners</a>
+                                <a class="dropdown-item" href="NutritionApps.html">Nutrition information apps</a>
+                                <a class="dropdown-item" href="WeeklyRecipes.html">Selection of weekly recipe choices</a>
+                                <a class="dropdown-item" href="Giftboxes.html">Giftboxes</a>
+                              </div>
+                            </div>
+
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="Packages.html">Packages</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="SignUp.html" id="sign-up">Sign Up</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="LogIn.html" id="log-in">Log In</a>
+                        </li>
+                    </ul>
+
+                </div> <!-- 3rd div -->
+            </div> <!-- 2nd div -->
+        </div> <!-- 1st div -->
+    </nav>
+
+<!-- Start of body contents-->
+    
+   		<div id="main-content" class="container-fluid" >
+		      <div class="row" >
+  		    	   <div class="col-sm-6">
+
+                    <div id="demo" class="carousel slide" data-ride="carousel">
+
+                          <!-- Indicators -->
+                          <ul class="carousel-indicators">
+                            <li data-target="#demo" data-slide-to="0" class="active"></li>
+                            <li data-target="#demo" data-slide-to="1"></li>
+                          </ul>
+
+                          <!-- The slideshow -->
+                          <div class="carousel-inner">
+                            <div class="carousel-item active">
+                              <img src="https://www.thespruceeats.com/thmb/FaoZDyhlE2RwOKCBuSyYoHE3buA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-87114771-58fe4a735f9b581d59f01bc7.jpg" style="width: 100%;"
+                               alt=" Veggie, Good Carb">
+                            </div>
+                            <div class="carousel-item">
+                              <img src="https://www.budgetbytes.com/wp-content/uploads/2022/03/Easy-Vegetable-Stir-Fry-close.jpg" style="width: 100%;"
+                                alt=" Veggie, Good Carb">
+                            </div>
+                          </div>
+
+                          <!-- Left and right controls -->
+                          <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                            <span class="carousel-control-prev-icon" ></span>
+                          </a>
+                          <a class="carousel-control-next" href="#demo" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                          </a>
+
+                    </div>
+ 
+               </div>
+      	       <div class="col-sm-6">
+                   <h1>Vegetable Stir-Fry</h1>
+                   <p class="timer-and-description">Cooking time : <b style="color: black;"> 20min</b> <span class="separator-icon"></span>  Veggie, Good Carb</p> <br>
+                   <p>A healthy and colorful vegetable stir-fry featuring different kinds of vegetables. The meal is especially suitable for all range of ages and differnt people with dietary requirements, including vegetarians.</p>
+                   <span class="nutrition-title">Nutrition Information</span> <span class="amount">1 serving<span class="separator-icon"></span>230g</span><br>
+
+                     <table id="Nutrition-table" class="table table-striped ">
+                          <tbody>
+                                <tr>
+                                    <td>Calories</td>
+                                    <td>150-200 kcal</td>                       
+                                </tr>
+                                <tr>
+                                    <td>Protein</td>
+                                    <td>5-10g</td>                        
+                                </tr>
+                                <tr>
+                                    <td>Carbohydrates</td>
+                                    <td>15-20g</td>                      
+                                </tr>
+                                <tr>
+                                    <td>Dietary Fiber</td>
+                                    <td>3-5g</td>                      
+                                </tr>
+                                <tr>
+                                    <td>Sugars</td>
+                                    <td>5-7g</td>                      
+                                </tr>
+                                <tr>
+                                    <td>Fat</td>
+                                    <td>8-10g</td>                      
+                                </tr>
+                                <tr>
+                                    <td>Saturated Fat</td>
+                                    <td>1-2g</td>                      
+                                </tr>
+                                <tr>
+                                    <td>Iron</td>
+                                    <td>1-2mg</td>                      
+                                </tr>
+                                <tr>
+                                    <td>Sodium</td>
+                                    <td>800-1000mg</td>                      
+                                </tr>
+                          </tbody>
+                    </table>
+
+               </div>
+   			  </div>
+   		</div><br><br>
+
+
+      <div class="container-fluid" >
+          <div class="row" >
+               <div id="Ingredients-card" class="col-sm-3">
+                    <h2>Ingredients</h2>
+                    <ul>
+                      <li>2 cups of mixed vegetables (such as bell peppers, broccoli, carrots, snap peas, and mushrooms), sliced or chopped</li>
+                      <li>200 grams of firm tofu or your choice of protein (chicken, shrimp, or beef), cut into bite-sized pieces (optional)</li>
+                      <li>2 tablespoons of vegetable oil</li>
+                      <li>2 cloves of garlic, minced</li>
+                      <li>1-inch piece of ginger, grated</li>
+                      <li>1/4 cup of soy sauce</li>
+                      <li>1 tablespoon of oyster sauce (optional)</li>
+                      <li>1 tablespoon of cornstarch mixed with 2 tablespoons of water (for thickening the sauce)</li>
+                      <li>1 teaspoon of sugar</li>
+                      <li>Freshly ground black pepper, to taste</li>
+                      <li>Cooked rice or noodles, for serving</li>
+                    </ul>
+               </div><br>
+               <div class="col-sm-9">
+                <h3>Instruction (How to cook)</h3>
+                 <table id="Instruction-table" class="table table-striped ">
+                          <tbody>
+                                <tr>
+                                    <td>Prepare the Sauce: In a small bowl, whisk together the soy sauce, oyster sauce (if using), cornstarch mixture, sugar, and a pinch of freshly ground black pepper. Set the sauce aside.</td>                       
+                                </tr>
+                                <tr>
+                                    <td>Cook the Protein (if using):Heat 1 tablespoon of vegetable oil in a large skillet or wok over high heat. If using tofu or meat, add it to the hot oil and stir-fry until it's cooked through and browned. Remove the protein from the skillet and set it aside.</td>                       
+                                </tr>
+                                <tr>
+                                    <td>Stir-Fry the Vegetables: Add the remaining 1 tablespoon of vegetable oil to the skillet. Add the minced garlic and grated ginger, and stir-fry for about 30 seconds until fragrant. Add the mixed vegetables to the skillet and stir-fry for 3-5 minutes, or until they are crisp-tender. You can adjust the cooking time based on your preference for the level of crunchiness.</td>                     
+                                </tr>
+                                <tr>
+                                    <td> Combine Protein and Sauce: If you cooked tofu or meat earlier, return it to the skillet with the cooked vegetables. Pour the prepared sauce over the tofu/meat and vegetables. Stir well to coat everything evenly.</td>                      
+                                </tr>
+                                <tr>
+                                    <td>Thicken the Sauce: Allow the sauce to simmer for a couple of minutes. It will thicken and become glossy. Continue stirring to ensure the sauce coats all the ingredients.</td>                     
+                                </tr>
+                                <tr>
+                                    <td>Serve: Serve the vegetable stir-fry hot over cooked rice or noodles. Garnish with additional black pepper or chopped green onions if desired.</td>                     
+                                </tr>
+                          </tbody>
+                    </table>
+               </div>
+          </div>
+      </div><br><br>
+
+
+
+<footer>
+
+    <br>
+    <div class="container-fluid">
+        <div class ="row">
+             <div class="col-sm-2"></div>
+             <div class="col-sm-3">    
+                <p style="color: white; font-size: clamp(13px, 5vw, 16px);">Customer support</p>  
+                    <ul class="quick-links"> 
+                        <li> <a href="AboutUs.html">About us</a> </li>
+                        <li> <a href="AboutUs.html#contact-us">Contact us</a> </li>
+                    </ul>      
+             </div>           
+             <div class="col-sm-3">
+                <p style="color: white; font-size: clamp(13px, 5vw, 16px);">Follow us</p>
+                    <div class="social-icons">
+                      <a href="https://www.facebook.com/" class="icon"><i class="fab fa-facebook-f"></i></a>
+                      <a href="https://www.instagram.com/" class="icon"><i class="fab fa-instagram"></i></a>
+                      <a href="https://www.pinterest.com/" class="icon"><i class="fab fa-pinterest-p"></i></a>
+                      <a href="https://www.tiktok.com/" class="icon"><i class="fab fa-tiktok"></i></a>
+                    </div>
+             </div>
+             <div class="col-sm-3">
+                <p style="color: white; font-size: clamp(13px, 5vw, 16px);">Download our app</p>
+                    <div class="store-icons">
+                      <a href="https://play.google.com/" class="icon"><i class="fab fa-google-play"></i> Google play store</a>
+                      <br>
+                      <a href="https://www.apple.com/app-store/" class="icon"><i class="fab fa-apple"></i> App store</a>
+                    </div>
+             </div>
+             <div class="col-sm-1"></div>
+        </div>
+    </div> <br>
+
+</footer>
+    
+</body>
+</html>
