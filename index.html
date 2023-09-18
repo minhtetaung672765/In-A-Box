@@ -157,8 +157,12 @@
           padding-top: 20px;
           font-size: 12px;
         }
-        .short-messages > li{
+        .short-messages > p{
+          margin-top: 20px;
           margin-bottom: clamp(1px, 2vw, 20px);
+        }
+        .check-icon{
+          color: green;
         }
 
         /*  footer section */
@@ -283,7 +287,6 @@
             <p> Easy-going meal plans</p>
              <img src="https://cdn-icons-png.flaticon.com/512/7490/7490373.png" style="width: 100px;">
              <p class="body-image-texts"> Customize your meal plans according<br> to your dietary requirements</p><br>
-             <a href="LogIn.html"><button type="button" id="get-started" >Get Started</button></a> <br><br><br>
            </div>
 
            <div class="col-sm-4 text-center">
@@ -291,25 +294,35 @@
              <img src="https://static.thenounproject.com/png/4303138-200.png" style="width: 100px;">
              <p class="body-image-texts"> Explore our recipes. <br> Cook amazing meals in your home</p>
            </div>
+
         </div>
+
+        <div class ="row" > <!-- second row -->
+                <div class="col-sm-4 "></div>
+                <div class="col-sm-4 text-center">
+                     <a href="LogIn.html"><button type="button" id="get-started" >Get Started</button></a> <br><br><br>
+                </div>
+                <div class="col-sm-4 "></div>
+          </div>
+
    </div><br><br>
 
    <p class="quotes">Cooking is Love made visible.</p> <br><br>
 
    <div class="container-fluid">
-        <div class ="row">
-           <div class="col-sm-1"></div>
-           <div class="col-sm-5 text-center">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa4vMk-WvRw8WNWqC7ahFvJs7t3KJGB6JXlw&usqp=CAU" style="width:clamp(200px, 38vw, 380px);">
+        <div class ="row" style="display: flex; flex-wrap: wrap;">
+           <div class="col-sm-0 col-lg-1"></div>
+           <div class="col-sm-6 col-lg-5 ">    
+              <img src="https://i.pinimg.com/474x/96/e0/00/96e0006c7f3caa67b8426aca16349fca.jpg" style="width:clamp(200px, 38vw, 380px);">
            </div>
-           <div class="col-sm-6">
-              <ul class="short-messages"> 
-                <li>Get delivered food boxes</li> 
-                <li>Cook amazing meals</li> 
-                <li>Easy to use cooking sets</li> 
-                <li>Get to know nutrition information</li> 
-                <li>Faster delivery service</li>
-              </ul>
+           <div class="col-sm-6 col-lg-5 ">
+              <div class="short-messages"> 
+                <p><span class="icon check-icon"><i class="fas fa-check"></i></span>Get delivered food boxes</p> 
+                <p><span class="icon check-icon"><i class="fas fa-check"></i></span>Cook amazing meals</p> 
+                <p><span class="icon check-icon"><i class="fas fa-check"></i></span>Easy to use cooking sets</p> 
+                <p><span class="icon check-icon"><i class="fas fa-check"></i></span>Get to know nutrition information</p>
+                <p><span class="icon check-icon"><i class="fas fa-check"></i></span>Faster delivery service</p>
+              </div>
            </div>
         </div>
    </div><br><br><br>     

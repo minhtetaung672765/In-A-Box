@@ -173,6 +173,33 @@
         .buy-button:hover{
           background-color: darkgreen;
         }
+        .body-row{
+          display: flex;
+          flex-wrap: wrap;
+          row-gap: 20px;
+          margin-bottom: 30px;
+        }
+        .body-cards{
+          display: flex;
+          flex-direction: column;
+          height: 95%;
+        }
+        .buy-button{
+          padding: 2px 0;
+          margin: 5px auto ;
+          display: flex;
+          flex-direction: column;
+          width: 90%;
+          align-items: center;
+          }
+
+          .buy-button-container {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          justify-content: flex-end;
+          margin-bottom: 5px;
+          }
 
 </style>
 
@@ -252,52 +279,64 @@
               <div class="col-sm-10">
 
                		<div  class="container-fluid">  <!-- Start of 2nd-container -->
-            		    <div class="row">
-            		        <div class="col-sm-4">
-            		        	<div class="card">
+            		    <div class="row body-row">
+            		        <div class="col-sm-4 ">
+            		        	<div class="card body-cards">
             			            <img src="https://fsirentalfurniture.com/wp-content/uploads/2020/08/fsi-accessories-housewares-comfort-packages.jpg" style="width: 100%;"
             			             alt="Multi-purpose Cooking set">
             			            <p class="item-names">Multi-purpose Cooking set</p> <p class="price">103$</p>
+                              <div class="buy-button-container">
             			            <a  href="LogIn.html"><button type="button" class="buy-button">Buy Now</button></a>
+                            </div>
             		        	</div>
             		        </div>
-            		        <div class="col-sm-4" style="width:100%;">
-            		        	<div class="card">
+            		        <div class="col-sm-4" >
+            		        	<div class="card body-cards">
             			            <img src="https://media-www.canadiantire.ca/product/living/kitchen/bakeware-baking-prep/1425488/7-piece-bakeware-set-fec0a734-6f8e-4c63-a0f5-fe11d1a3ddc3.png" style="  width: 100%;" alt="Bakeware">
             			            <p class="item-names">Non-stick Carbon Steel Bakeware</p><p class="price">25$</p>
+                              <div class="buy-button-container">
             			            <a  href="LogIn.html"><button type="button" class="buy-button">Buy Now</button></a>
+                            </div>
             			        </div>
             		        </div>
                         <div class="col-sm-4">
-                          <div class="card">
+                          <div class="card body-cards">
                               <img src="https://assets.vogue.com/photos/6076143c1531b824729fce05/4:3/w_2560%2Cc_limit/CN00157072.jpg" style="  width: 100%;" alt="Cutlery">
                               <p class="item-names">Multi-purpose Cutlery Set</p><p class="price">13$</p>
+                              <div class="buy-button-container">
                               <a  href="LogIn.html"><button type="button" class="buy-button">Buy Now</button></a>
+                            </div>
                           </div>
                         </div>
             		    </div>
 
-                    <div class="row">    <!-- 2nd row -->
+                    <div class="row body-row">    <!-- 2nd row -->
                         <div class="col-sm-4">
-                          <div class="card">
+                          <div class="card body-cards">
                               <img src="https://m.media-amazon.com/images/I/81Z6yIxLEWL.jpg" style="width: 100%;"
                                alt="Gloves">
                               <p class="item-names">Microwave & Oven Gloves</p><p class="price">20$</p>
+                              <div class="buy-button-container">
                               <a  href="LogIn.html"><button type="button" class="buy-button">Buy Now</button></a>
+                            </div>
                           </div>
                         </div>
                         <div class="col-sm-4">
-                          <div class="card">
+                          <div class="card body-cards">
                               <img src="https://www.eatthis.com/wp-content/uploads/sites/4/2019/12/cooksmark-cookware-set.jpg?quality=82&strip=1" style="  width: 100%;" alt="Frying Set">
                               <p class="item-names">Non-sticky Frying Set (pots and pans)</p><p class="price">50$</p>
+                              <div class="buy-button-container">
                               <a  href="LogIn.html"><button type="button" class="buy-button">Buy Now</button></a>
+                            </div>
                           </div>
                         </div>
                         <div class="col-sm-4">
-                          <div class="card">
+                          <div class="card body-cards">
                               <img src="https://mysunnysue.de/images/product_images/popup_images/101-61.png" style="  width: 100%;" alt="Baking Set">
                               <p class="item-names">Baking Set (Multi-purpsoe kit)</p><p class="price">23$</p>
+                              <div class="buy-button-container">
                               <a  href="LogIn.html"><button type="button" class="buy-button">Buy Now</button></a>
+                            </div>
                           </div>
                         </div>
                     </div>

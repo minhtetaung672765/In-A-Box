@@ -177,11 +177,42 @@
       }
       .standard-lists{
         text-align: left;
-/*        list-style: none;*/
+        margin-left: 10px;
       }
-      ul[class="standard-lists"] li{
-        text-align: left;
+      .check-icon{ color:green; }
+
+      .body-row{
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 20px;
+        margin-bottom: 30px;
       }
+      .body-cards{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .body-cards a{ text-decoration:none; }
+
+      .buy-button, .contact-button{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        align-items: center;
+        padding: 3px 0;
+        margin: 5px auto;
+
+         }
+
+        .purchase-button-container{
+          display: flex;
+          flex-direction: column;
+        height: 100%;
+        justify-content: flex-end;
+        margin-bottom: 5px;
+        }
+
 
 
 </style>
@@ -250,64 +281,73 @@
     </nav>
 
 <!-- Start of body contents-->
+
     
       <h1>Choose Your Prefered Package</h1>
 
       <div id="body-content" class="container-fluid">
 
-          <div class="row">
+          <div class="row ">
               <div class="col-sm-1"></div>
               <div class="col-sm-10">
 
                		<div  class="container-fluid">  <!-- Start of 2nd-container -->
 
-            		    <div class="row">
-            		        <div class="col-sm-3 text-center">
-            		        	<div class="card">
+            		    <div class="row body-row">
+            		        <div class="col-md-6 col-lg-3 text-center">
+            		        	<div class="card body-cards">
             			            <img src="https://www.fooddudes.ie/wp-content/uploads/2020/04/vegetable_FoodDudess.jpg" style="width: 100%;"
             			             alt="Beginner">
             			            <p class="package-names">Beginner</p> 
-                                <ul class="standard-lists">
-                                    <li>Standard Weekly Recipes</li>
-                                    <li>1 bake at home set</li>
-                                    <li>10% off nutritional information app</li>
-                                    <li>10% off one special occasion gift box.</li>                                  
-                                </ul>
+                                <div class="standard-lists">
+                                    <p><span class="icon check-icon"><i class="fas fa-check"></i></span>Standard Weekly Recipes</p>
+                                    <p><span class="icon check-icon"><i class="fas fa-check"></i></span>1 bake at home set</p>
+                                    <p><span class="icon check-icon"><i class="fas fa-check"></i></span>10% off nutritional information app</p>
+                                    <p><span class="icon check-icon"><i class="fas fa-check"></i></span>10% off one special occasion gift box.</p>                                  
+                                </div>
+                              <div class="purchase-button-container">
             			            <a  href="LogIn.html"><button type="button" class="buy-button">Buy</button></a>
+                             </div>
             		        	</div>
             		        </div>
-            		        <div class="col-sm-3 text-center">
-            		        	<div class="card">
-            			            <img src="https://www.fooddudes.ie/wp-content/uploads/2020/04/vegetable_FoodDudess.jpg" style="  width: 100%;" alt="Everyday">
+            		        <div class="col-md-6 col-lg-3 text-center">
+            		        	<div class="card body-cards">
+            			            <img src="https://i.pinimg.com/474x/a7/d8/aa/a7d8aa586297720cd20257a58cb54db6.jpg" style="  width: 100%;" alt="Everyday">
             			            <p class="package-names">Everyday</p>
-                              <ul class="standard-lists">
-                                    <li>35 weekly recipes to choose from</li>
-                                    <li>3 bake at home set</li>
-                                    <li>50% off nutritional information app</li>
-                                    <li>1 free special occasion gift box.</li>                                  
-                                </ul>
+                              <div class="standard-lists">
+                                    <p><span class="icon check-icon"><i class="fas fa-check"></i></span>35 weekly recipes to choose from</p>
+                                    <p><span class="icon check-icon"><i class="fas fa-check"></i></span>3 bake at home set</p>
+                                    <p><span class="icon check-icon"><i class="fas fa-check"></i></span>50% off nutritional information app</p>
+                                    <p><span class="icon check-icon"><i class="fas fa-check"></i></span>1 free special occasion gift box.</p>                                  
+                                </div>
+                              <div class="purchase-button-container">
             			            <a  href="LogIn.html"><button type="button" class="buy-button">Buy</button></a>
+                            </div>
             			        </div>
             		        </div>
-                        <div class="col-sm-3 text-center">
-                          <div class="card">
-                              <img src="https://www.fooddudes.ie/wp-content/uploads/2020/04/vegetable_FoodDudess.jpg" style="  width: 100%;" alt="Deluxe">
+                        <div class="col-md-6 col-lg-3 text-center">
+                          <div class="card body-cards">
+                              <img src="https://i.pinimg.com/474x/1f/ed/bc/1fedbc959ce9309e45646163c5f95c2c.jpg" style="  width: 100%;" alt="Deluxe">
                               <p class="package-names">Deluxe</p>
-                              <ul class="standard-lists">
-                                    <li>50 weekly recipes to choose from</li>
-                                    <li>5 bake at home set</li>
-                                    <li>Free nutritional information app</li>
-                                    <li>3 special occasion gift box.</li>                                  
-                                </ul>
+                              <div class="standard-lists">
+                                    <p><span class="icon check-icon"><i class="fas fa-check"></i></span>50 weekly recipes to choose from</p>
+                                    <p><span class="icon check-icon"><i class="fas fa-check"></i></span>5 bake at home set</p>
+                                    <p><span class="icon check-icon"><i class="fas fa-check"></i></span>Free nutritional information app</p>
+                                    <p><span class="icon check-icon"><i class="fas fa-check"></i></span>3 special occasion gift box.</p>                                  
+                                </div>
+                              <div class="purchase-button-container">
                               <a  href="LogIn.html"><button type="button" class="buy-button">Buy</button></a>
+                            </div>
                           </div>
                         </div>
-                        <div class="col-sm-3 text-center">
-                          <div class="card">
-                              <img src="https://www.fooddudes.ie/wp-content/uploads/2020/04/vegetable_FoodDudess.jpg" style="  width: 100%;" alt="Custom">
+                        <div class="col-md-6 col-lg-3 text-center">
+                          <div class="card body-cards">
+                              <img src="https://img.freepik.com/premium-vector/courier-uniform-with-food-paper-bag-food-delivery-services-flat-vector-illustration_256722-346.jpg" style="  width: 100%;" alt="Custom">
                               <p class="package-names">Custom</p>
-                              <p class="description"> Catered for dietary requirements and allergies. Please contact the company to arrange the package.</p>
+                              <p class="description"> Catered for dietary requirements and allergies. <br><br>Please contact the company to arrange the package.</p>
+                              <div class="purchase-button-container">
                               <a  href="AboutUs.html#contact-us"><button type="button" class="contact-button">Contact Company</button></a>
+                            </div>
                           </div>
                         </div>
             		    </div><br><br>

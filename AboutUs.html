@@ -153,6 +153,13 @@
             font-size: clamp(16px, 3vw, 18px);
             text-align: justify;
          }
+         input[type="submit"]{
+            background-color: lightgrey;
+         }
+         input[type="submit"]:hover{
+            color: white;
+            background-color: navy;
+         }
     
 
 </style>
@@ -293,20 +300,31 @@
                 <p><span class="keywords">Have questions or need assistance?</span> </p>
                 <p>Our friendly team is always here to help. Contact us anytime, and we'll be delighted to assist you on your culinary adventure.</p><br>
 
-                <div class="row"> <!--Inner row-->
-                    <div class="col-sm-12">
-                        <p><span class="icon"><i class="fas fa-envelope"></i></span>Email : <a class="contact-info" href="">contact@inabox.com</a></p>
-                        <p><span class="icon"><i class="fas fa-phone"></i></span>Contact : <a class="contact-info" href="">1-454-322-8259</a></p>
-                        <a class="contact-info" href="">1-837-342-3347</a><br>
-                        <a class="contact-info" href="">1-237-114-7422</a>
-                        <p><a class="contact-info" href="">(969) 791-3449</a></p>
-                    </div>                        
-                </div> <!--Inner row-->
-
             </div>
             <div class="col-sm-1"></div>
 
         </div>
+        <div class="row"> 
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-5">
+                        <p><span class="icon"><i class="fas fa-envelope"></i></span>Email : <a class="contact-info" href="mailto:contact@inabox.com">contact@inabox.com</a></p>
+                        <p><span class="icon"><i class="fas fa-envelope"></i></span>Email : <a class="contact-info" href="mailto:support@inabox.com">support@inabox.com</a></p>
+                        <p><span class="icon"><i class="fas fa-phone"></i></span>Contact : <a class="contact-info" href="tel:1-454-322-8259">1-454-322-8259</a></p>
+                        <a class="contact-info" href="tel:1-837-342-3347">1-837-342-3347</a><br>
+                        <a class="contact-info" href="tel:1-237-114-7422">1-237-114-7422</a>
+                        <p><a class="contact-info" href="tel:(969) 791-3449">(969) 791-3449</a></p>
+                    </div>       
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                        <label for="email"><b>Enter your email</b> </label>
+                        <input class="form-control" type="email" name="email" placeholder="Email">                   
+                        <textarea class="form-control" id="suggestion" name="suggestion" rows="3" placeholder="Enter your suggestion here..." ></textarea>
+                        </div>
+                        <input class="form-control" type="submit" value="Submit">
+                    </div>
+                    <div class="col-sm-1"></div>
+
+        </div> 
     </div>
     <br><br><br>
 
