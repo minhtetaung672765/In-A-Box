@@ -1,332 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="C:/Bootstrap 4/css/bootstrap.min.css">
-    <script src="C:/Bootstrap 4/js/bootstrap.min.js"></script>
+  <!-- <link rel="stylesheet" href="C:/Bootstrap 4/css/bootstrap.min.css">
+    <script src="C:/Bootstrap 4/js/bootstrap.min.js"></script> -->
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"> <!--social icons-->
-
-
-    <title>Nutrition Information Apps For You - In A Box</title>
-
-    <style type="text/css" >
-
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&family=PT+Serif:ital,wght@1,700&family=Caveat:wght@700&family=Open+Sans:wght@500&family=Montserrat:wght@500&display=swap');
-
-        .navbar-custom {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 500;
-            background-color: white ; 
-            padding: 15px 0; 
-            border-bottom: 1px solid grey;
-        }       
-        .navbar-custom .nav-link, .navbar-custom .btn, .dropdown-item {
-            color: black;
-            font-family: 'Open Sans', sans-serif;
-        }
-        .dropdown-item{
-          margin-bottom: 15px;
-        }
-        .navbar-custom .dropdown .btn {  /* dropdown nav */
-            background-color: transparent; 
-            border: none;
-            color: black;
-        }
-        #sign-up{
-          border: 1px solid #bbbcb8;
-          padding: 10px;
-        }
-        #sign-up:hover{
-          border: 1px solid navy;
-        }
-        #log-in{
-          color: white;
-          background-color: navy;
-          padding: 10px 15px;
-          box-shadow: 1px 1px 3px #000;
-        }
-        #log-in:hover{
-          background-color: #56179b;
-        }
-        /*  Navigation bar customization */
-
-         .nav-item , .dropdown .btn {
-          position: relative;
-          padding: 0;
-          margin-right: 20px;
-        }
-         .nav-item .nav-link{
-          padding: 10px 0 10px 0;
-        }
-         .dropdown .btn {
-          padding: 10px 0 10px 0;
-        }
-         .nav-item .nav-link , .dropdown .btn{
-          position: relative;
-        }
-         .nav-item .nav-link::before , .dropdown .btn::before {
-          content: "";
-          position: absolute;
-          width: 100%;
-          height: 2px; /* Adjust the thickness of the underline */
-          bottom: 0;
-          left: 0;
-        }
-         .nav-item .nav-link:hover::before  , .dropdown .btn:hover::before{
-          background-color: navy; 
-        }
-        #sign-up:hover::before , #log-in:hover::before{
-          background-color: initial;    /* remove underline setting */
-        }
-
-        /*  footer section */
-        footer{
-          background-color: navy;          
-          width: 100%;
-        }
-        .quick-links{
-          list-style: none;
-          padding-left: 0;
-        }
-        ul[class ="quick-links"]> li {
-          margin-bottom: 10px;
-        }
-        ul[class ="quick-links"]> li >a {
-          color: lightblue;
-          font-size: clamp(13px, 5vw, 16px);
-        }
-        .social-icons , .store-icons {
-          font-size: clamp(14px, 4vw, 20px); 
-          margin-bottom: 16px;  /* to ensure spacing when it's responsive */
-        }
-        .icon {
-          margin-right: 10px;  
-        }
-        .icon:hover{
-          color: blue;
-        }
-        div[class="store-icons"] > a{
-          text-decoration: none;
-          font-size: clamp(14px, 4vw, 16px);
-        }
-
-        /* Body contents */
-            
-        h1{
-            margin: 120px 0 10px 0;
-            text-align: center;
-            font-size: clamp(20px, 3vw, 30px);
-        }
-        h2{
-            text-align: center;
-            font-size: 14px;
-            color: grey;
-            margin-bottom: clamp(30px, 8vw, 100px);
-        }
-        .col-sm-7{
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-        }
-        .get-app-button{
-            padding: 5px 10px;
-            margin: 5px 0 ;
-            border: none;
-            border-radius: 3px;
-            color: white;
-            background-color: royalblue;
-        }
-        .get-app-button:hover{
-            background-color: navy;
-        }
-        .text-right{
-            border-top:1px solid lightgrey;
-        }
-        .description{
-            font-size: clamp(12px, 2vw, 16px);
-        }
-        @media (max-width: 550px){
-                  .button-container{
-            display: flex;
-            justify-content: center;
-        }
-        }
-        .app-names{
-            font-weight: bold;
-            font-family: 'Roboto Slab', serif;
-            margin:15px 2px;
-        }
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <!--social icons-->
 
 
-</style>
+  <title>Nutrition Information Apps For You - In A Box</title>
+
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&family=PT+Serif:ital,wght@1,700&family=Caveat:wght@700&family=Open+Sans:wght@500&family=Montserrat:wght@500&display=swap');
+
+    .navbar-custom {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 500;
+      background-color: white;
+      padding: 15px 0;
+      border-bottom: 1px solid grey;
+    }
+
+    .navbar-custom .nav-link,
+    .navbar-custom .btn,
+    .dropdown-item {
+      color: black;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .dropdown-item {
+      margin-bottom: 15px;
+    }
+
+    .navbar-custom .dropdown .btn {
+      /* dropdown nav */
+      background-color: transparent;
+      border: none;
+      color: black;
+    }
+
+    #sign-up {
+      border: 1px solid #bbbcb8;
+      padding: 10px;
+    }
+
+    #sign-up:hover {
+      border: 1px solid navy;
+    }
+
+    #log-in {
+      color: white;
+      background-color: navy;
+      padding: 10px 15px;
+      box-shadow: 1px 1px 3px #000;
+    }
+
+    #log-in:hover {
+      background-color: #56179b;
+    }
+
+    /*  Navigation bar customization */
+
+    .nav-item,
+    .dropdown .btn {
+      position: relative;
+      padding: 0;
+      margin-right: 20px;
+    }
+
+    .nav-item .nav-link {
+      padding: 10px 0 10px 0;
+    }
+
+    .dropdown .btn {
+      padding: 10px 0 10px 0;
+    }
+
+    .nav-item .nav-link,
+    .dropdown .btn {
+      position: relative;
+    }
+
+    .nav-item .nav-link::before,
+    .dropdown .btn::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      /* Adjust the thickness of the underline */
+      bottom: 0;
+      left: 0;
+    }
+
+    .nav-item .nav-link:hover::before,
+    .dropdown .btn:hover::before {
+      background-color: navy;
+    }
+
+    #sign-up:hover::before,
+    #log-in:hover::before {
+      background-color: initial;
+      /* remove underline setting */
+    }
+
+    /*  footer section */
+    footer {
+      background-color: navy;
+      width: 100%;
+    }
+
+    .quick-links {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul[class="quick-links"]>li {
+      margin-bottom: 10px;
+    }
+
+    ul[class="quick-links"]>li>a {
+      color: lightblue;
+      font-size: clamp(13px, 5vw, 16px);
+    }
+
+    .social-icons,
+    .store-icons {
+      font-size: clamp(14px, 4vw, 20px);
+      margin-bottom: 16px;
+      /* to ensure spacing when it's responsive */
+    }
+
+    .icon {
+      margin-right: 10px;
+    }
+
+    .icon:hover {
+      color: blue;
+    }
+
+    div[class="store-icons"]>a {
+      text-decoration: none;
+      font-size: clamp(14px, 4vw, 16px);
+    }
+
+    /* Body contents */
+
+    h1 {
+      margin: 120px 0 10px 0;
+      text-align: center;
+      font-size: clamp(20px, 3vw, 30px);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 14px;
+      color: grey;
+      margin-bottom: clamp(30px, 8vw, 100px);
+    }
+
+    .col-sm-7 {
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .get-app-button {
+      padding: 5px 10px;
+      margin: 5px 0;
+      border: none;
+      border-radius: 3px;
+      color: white;
+      background-color: royalblue;
+    }
+
+    .get-app-button:hover {
+      background-color: navy;
+    }
+
+    .text-right {
+      border-top: 1px solid lightgrey;
+    }
+
+    .description {
+      font-size: clamp(12px, 2vw, 16px);
+    }
+
+    @media (max-width: 550px) {
+      .button-container {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    .app-names {
+      font-weight: bold;
+      font-family: 'Roboto Slab', serif;
+      margin: 15px 2px;
+    }
+  </style>
 
 </head>
+
 <body>
 
-    <nav class="navbar navbar-expand-md  navbar-custom">
-        
-        <div class="container-fluid"> <!-- 1st div -->
-            <!-- Move the brand/logo to the left -->
-            <a class="navbar-brand" href="index.html" > 
-              <img src= "https://i.imgur.com/ByUlMbp.jpeg" id="brand-logo" alt="Logo" style="width:130px;"> 
-            </a>
+  <nav class="navbar navbar-expand-md  navbar-custom">
 
-            <!-- Create a separate div to hold the navigation items and align it to the right -->
-            <div class="ml-auto"> <!-- 2nd div -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" 
-                style="padding: 0;">
-                <span class="navbar-toggler-icon">
-                  <!-- using bootsrap svg for icon-->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M3 2.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
-                    </svg>
-                </span>
-                </button>
+    <div class="container-fluid"> <!-- 1st div -->
+      <!-- Move the brand/logo to the left -->
+      <a class="navbar-brand" href="index.html">
+        <img src="https://i.imgur.com/ByUlMbp.jpeg" id="brand-logo" alt="Logo" style="width:130px;">
+      </a>
 
-                <div class="collapse navbar-collapse" id="collapsibleNavbar"> <!-- 3rd div -->
+      <!-- Create a separate div to hold the navigation items and align it to the right -->
+      <div class="ml-auto"> <!-- 2nd div -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"
+          style="padding: 0;">
+          <span class="navbar-toggler-icon">
+            <!-- using bootsrap svg for icon-->
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M3 2.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+            </svg>
+          </span>
+        </button>
 
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                          
-                          <div class="dropdown">
-                              <div class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                Services & Products
-                              </div>
-                              <div class="dropdown-menu">
-                                <a class="dropdown-item" href="Recipes.html">Recipes</a>
-                                <a class="dropdown-item" href="BakeHomeSet.html">Bake-at-home sets</a>
-                                <a class="dropdown-item" href="Ingredients.html">Ingredients</a>
-                                <div class="dropdown-header" style="font-size: 13px; color:grey; padding:1;">
-                                Other items
-                                </div>
-                                <a class="dropdown-item" href="MealPlanner.html">Meal planners</a>
-                                <a class="dropdown-item" href="NutritionApps.html">Nutrition information apps</a>
-                                <a class="dropdown-item" href="WeeklyRecipes.html">Selection of weekly recipe choices</a>
-                                <a class="dropdown-item" href="Giftboxes.html">Giftboxes</a>
-                              </div>
-                            </div>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar"> <!-- 3rd div -->
 
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="Packages.html">Packages</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="SignUp.html" id="sign-up">Sign Up</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="LogIn.html" id="log-in">Log In</a>
-                        </li>
-                    </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
 
-                </div> <!-- 3rd div -->
-            </div> <!-- 2nd div -->
-        </div> <!-- 1st div -->
-    </nav>
-
-<!-- Start of body contents-->
-
-
-    <h1>Get to Know About Nutrition and Health With The Apps</h1>
-    <h2>These nutrition information apps are your trusted companions on your journey to a healthier lifestyle. </h2>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-3">
-                <img src="https://play-lh.googleusercontent.com/RSu_Yble-5MgqnXbuqaYdj9r97Wv3yE0ICX2vDGAw2QCZPF4wZLA71Q1cEndjR1WpDM" alt="MyFitnessPal" style="width: 100%;">
-            </div>
-            <div class="col-sm-7 align-self-start">
-                <p class="app-names">MyFitnessPal</p>
-                <p class="description">Are you looking for a comprehensive and user-friendly way to track your nutrition and fitness goals? Look no further than MyFitnessPal! This incredible app allows you to effortlessly monitor your daily food intake, log your exercise routines, and achieve your health objectives. With a vast database of foods and detailed nutrition information, you'll have all the tools you need to make informed choices about what you eat. Plus, it's super easy to use, making it perfect for beginners and experienced health enthusiasts alike. Whether you're counting calories, tracking macros, or simply aiming to eat better, MyFitnessPal has your back.</p>
-                <div class="button-container text-right">
-                    <a href="https://www.myfitnesspal.com/"><button class="get-app-button">Get The App</button></a>
+              <div class="dropdown">
+                <div class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                  Services & Products
                 </div>
-            </div>
-            <div class="col-sm-1"></div>
-        </div>
-    </div>
-    <br><br><br>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-7 align-self-start">
-                <p class="app-names">Nutritionix</p>
-                <p class="description">When it comes to understanding the nutritional content of your meals, Nutritionix is the ultimate go-to app. Its powerful API integration lets you access a treasure trove of food data, enabling you to build your own nutrition calculator on your favorite websites. Imagine effortlessly searching for foods and instantly getting detailed nutrition facts, including calories, protein, carbs, and more. Nutritionix makes healthy eating simple, whether you're planning meals, creating recipes, or simply curious about what you're consuming. It's your personal nutrition assistant right at your fingertips.</p>
-                <div class="button-container text-left" style="border-top: 1px solid lightgrey;">
-                    <a href="https://www.nutritionix.com/app"><button class="get-app-button">Get The App</button></a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="Recipes.html">Recipes</a>
+                  <a class="dropdown-item" href="BakeHomeSet.html">Bake-at-home sets</a>
+                  <a class="dropdown-item" href="Ingredients.html">Ingredients</a>
+                  <div class="dropdown-header" style="font-size: 13px; color:grey; padding:1;">
+                    Other items
+                  </div>
+                  <a class="dropdown-item" href="MealPlanner.html">Meal planners</a>
+                  <a class="dropdown-item" href="NutritionApps.html">Nutrition information apps</a>
+                  <a class="dropdown-item" href="WeeklyRecipes.html">Selection of weekly recipe choices</a>
+                  <a class="dropdown-item" href="Giftboxes.html">Giftboxes</a>
                 </div>
-            </div>
-            <div class="col-sm-3">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwvY_bVIwxDm0TStkiAr1K0Zkr4lZ7-KtQtg&usqp=CAU" alt="Nutritionix" style="width: 100%; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);">
-            </div>
-            <div class="col-sm-1"></div>
-        </div>
-    </div>
-    <br><br><br>
+              </div>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-3">
-                <img src="https://play-lh.googleusercontent.com/JfuwnIUzDUcY_OqnGCcu3rW5q9l0RlDEabhisQdW88vrBib9e9GQp9S3BjDxilVqiKs" alt="Cronometer" style="width: 100%;">
-            </div>
-            <div class="col-sm-7 align-self-start">
-                <p class="app-names">Cronometer</p>
-                <p class="description">If you're serious about tracking not only macronutrients but also micronutrients, Cronometer is the app for you. It offers a deep dive into the world of nutrition, ensuring you're getting the vitamins and minerals your body needs. Cronometer's accuracy in tracking essential nutrients is unmatched, making it a favorite among health-conscious individuals. Whether you're following a specific diet, have dietary restrictions, or simply want to optimize your nutrition, Cronometer has your health and well-being covered.</p>
-                <div class="button-container text-right">
-                    <a href="https://cronometer.com/" ><button class="get-app-button">Get The App</button></a>
-                </div>
-            </div>
-            <div class="col-sm-1"></div>
-        </div>
-    </div>
-    <br><br><br>    
-  
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Packages.html">Packages</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="SignUp.html" id="sign-up">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="LogIn.html" id="log-in">Log In</a>
+            </li>
+          </ul>
 
-<footer>
+        </div> <!-- 3rd div -->
+      </div> <!-- 2nd div -->
+    </div> <!-- 1st div -->
+  </nav>
+
+  <!-- Start of body contents-->
+
+
+  <h1>Get to Know About Nutrition and Health With The Apps</h1>
+  <h2>These nutrition information apps are your trusted companions on your journey to a healthier lifestyle. </h2>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-3">
+        <img
+          src="https://play-lh.googleusercontent.com/RSu_Yble-5MgqnXbuqaYdj9r97Wv3yE0ICX2vDGAw2QCZPF4wZLA71Q1cEndjR1WpDM"
+          alt="MyFitnessPal" style="width: 100%;">
+      </div>
+      <div class="col-sm-7 align-self-start">
+        <p class="app-names">MyFitnessPal</p>
+        <p class="description">Are you looking for a comprehensive and user-friendly way to track your nutrition and
+          fitness goals? Look no further than MyFitnessPal! This incredible app allows you to effortlessly monitor your
+          daily food intake, log your exercise routines, and achieve your health objectives. With a vast database of
+          foods and detailed nutrition information, you'll have all the tools you need to make informed choices about
+          what you eat. Plus, it's super easy to use, making it perfect for beginners and experienced health enthusiasts
+          alike. Whether you're counting calories, tracking macros, or simply aiming to eat better, MyFitnessPal has
+          your back.</p>
+        <div class="button-container text-right">
+          <a href="https://www.myfitnesspal.com/"><button class="get-app-button">Get The App</button></a>
+        </div>
+      </div>
+      <div class="col-sm-1"></div>
+    </div>
+  </div>
+  <br><br><br>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-7 align-self-start">
+        <p class="app-names">Nutritionix</p>
+        <p class="description">When it comes to understanding the nutritional content of your meals, Nutritionix is the
+          ultimate go-to app. Its powerful API integration lets you access a treasure trove of food data, enabling you
+          to build your own nutrition calculator on your favorite websites. Imagine effortlessly searching for foods and
+          instantly getting detailed nutrition facts, including calories, protein, carbs, and more. Nutritionix makes
+          healthy eating simple, whether you're planning meals, creating recipes, or simply curious about what you're
+          consuming. It's your personal nutrition assistant right at your fingertips.</p>
+        <div class="button-container text-left" style="border-top: 1px solid lightgrey;">
+          <a href="https://www.nutritionix.com/app"><button class="get-app-button">Get The App</button></a>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwvY_bVIwxDm0TStkiAr1K0Zkr4lZ7-KtQtg&usqp=CAU"
+          alt="Nutritionix" style="width: 100%; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);">
+      </div>
+      <div class="col-sm-1"></div>
+    </div>
+  </div>
+  <br><br><br>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-3">
+        <img
+          src="https://play-lh.googleusercontent.com/JfuwnIUzDUcY_OqnGCcu3rW5q9l0RlDEabhisQdW88vrBib9e9GQp9S3BjDxilVqiKs"
+          alt="Cronometer" style="width: 100%;">
+      </div>
+      <div class="col-sm-7 align-self-start">
+        <p class="app-names">Cronometer</p>
+        <p class="description">If you're serious about tracking not only macronutrients but also micronutrients,
+          Cronometer is the app for you. It offers a deep dive into the world of nutrition, ensuring you're getting the
+          vitamins and minerals your body needs. Cronometer's accuracy in tracking essential nutrients is unmatched,
+          making it a favorite among health-conscious individuals. Whether you're following a specific diet, have
+          dietary restrictions, or simply want to optimize your nutrition, Cronometer has your health and well-being
+          covered.</p>
+        <div class="button-container text-right">
+          <a href="https://cronometer.com/"><button class="get-app-button">Get The App</button></a>
+        </div>
+      </div>
+      <div class="col-sm-1"></div>
+    </div>
+  </div>
+  <br><br><br>
+
+
+  <footer>
 
     <br>
     <div class="container-fluid">
-        <div class ="row">
-             <div class="col-sm-2"></div>
-             <div class="col-sm-3">    
-                <p style="color: white; font-size: clamp(13px, 5vw, 16px);">Customer support</p>  
-                    <ul class="quick-links"> 
-                        <li> <a href="AboutUs.html">About us</a> </li>
-                        <li> <a href="AboutUs.html#contact-us">Contact us</a> </li>
-                    </ul>      
-             </div>           
-             <div class="col-sm-3">
-                <p style="color: white; font-size: clamp(13px, 5vw, 16px);">Follow us</p>
-                    <div class="social-icons">
-                      <a href="https://www.facebook.com/" class="icon"><i class="fab fa-facebook-f"></i></a>
-                      <a href="https://www.instagram.com/" class="icon"><i class="fab fa-instagram"></i></a>
-                      <a href="https://www.pinterest.com/" class="icon"><i class="fab fa-pinterest-p"></i></a>
-                      <a href="https://www.tiktok.com/" class="icon"><i class="fab fa-tiktok"></i></a>
-                    </div>
-             </div>
-             <div class="col-sm-3">
-                <p style="color: white; font-size: clamp(13px, 5vw, 16px);">Download our app</p>
-                    <div class="store-icons">
-                      <a href="https://play.google.com/" class="icon"><i class="fab fa-google-play"></i> Google play store</a>
-                      <br>
-                      <a href="https://www.apple.com/app-store/" class="icon"><i class="fab fa-apple"></i> App store</a>
-                    </div>
-             </div>
-             <div class="col-sm-1"></div>
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-3">
+          <p style="color: white; font-size: clamp(13px, 5vw, 16px);">Customer support</p>
+          <ul class="quick-links">
+            <li> <a href="AboutUs.html">About us</a> </li>
+            <li> <a href="AboutUs.html#contact-us">Contact us</a> </li>
+          </ul>
         </div>
+        <div class="col-sm-3">
+          <p style="color: white; font-size: clamp(13px, 5vw, 16px);">Follow us</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/" class="icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/" class="icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.pinterest.com/" class="icon"><i class="fab fa-pinterest-p"></i></a>
+            <a href="https://www.tiktok.com/" class="icon"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <p style="color: white; font-size: clamp(13px, 5vw, 16px);">Download our app</p>
+          <div class="store-icons">
+            <a href="https://play.google.com/" class="icon"><i class="fab fa-google-play"></i> Google play store</a>
+            <br>
+            <a href="https://www.apple.com/app-store/" class="icon"><i class="fab fa-apple"></i> App store</a>
+          </div>
+        </div>
+        <div class="col-sm-1"></div>
+      </div>
     </div> <br>
 
-</footer>
-    
+  </footer>
+
 </body>
+
 </html>

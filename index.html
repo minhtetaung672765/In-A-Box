@@ -1,368 +1,421 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="C:/Bootstrap 4/css/bootstrap.min.css">
-    <script src="C:/Bootstrap 4/js/bootstrap.min.js"></script>
+  <!-- <link rel="stylesheet" href="C:/Bootstrap 4/css/bootstrap.min.css">
+    <script src="C:/Bootstrap 4/js/bootstrap.min.js"></script> -->
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"> <!--social icons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <!--social icons-->
 
 
-    <title>Food Boxes Delivery Services - In A Box</title>
+  <title>Food Boxes Delivery Services - In A Box</title>
 
-    <style type="text/css" >
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&family=PT+Serif:ital,wght@1,700&family=Caveat:wght@700&family=Open+Sans:wght@500&display=swap');
 
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&family=PT+Serif:ital,wght@1,700&family=Caveat:wght@700&family=Open+Sans:wght@500&display=swap');
+    .navbar-custom {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 500;
+      background-color: white;
+      padding: 15px 0;
+      border-bottom: 1px solid grey;
+    }
 
-        .navbar-custom {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 500;
-            background-color: white ; 
-            padding: 15px 0; 
-            border-bottom: 1px solid grey;
-        }       
-        .navbar-custom .nav-link, .navbar-custom .btn, .dropdown-item {
-            color: black;
-            font-family: 'Open Sans', sans-serif;
-        }
-        .dropdown-item{
-          margin-bottom: 15px;
-        }
-        .navbar-custom .dropdown .btn {  /* dropdown nav */
-            background-color: transparent; 
-            border: none;
-            color: black;
-        }
-        #sign-up{
-          border: 1px solid #bbbcb8;
-          padding: 10px;
-        }
-        #sign-up:hover{
-          border: 1px solid navy;
-        }
-        #log-in{
-          color: white;
-          background-color: navy;
-          padding: 10px 15px;
-          box-shadow: 1px 1px 3px #000;
-        }
-        #log-in:hover{
-          background-color: #56179b;
-        }
-        /*  Navigation bar customization */
+    .navbar-custom .nav-link,
+    .navbar-custom .btn,
+    .dropdown-item {
+      color: black;
+      font-family: 'Open Sans', sans-serif;
+    }
 
-         .nav-item , .dropdown .btn {
-          position: relative;
-          padding: 0;
-          margin-right: 20px;
-        }
-         .nav-item .nav-link{
-          padding: 10px 0 10px 0;
-        }
-         .dropdown .btn {
-          padding: 10px 0 10px 0;
-        }
-         .nav-item .nav-link , .dropdown .btn{
-          position: relative;
-        }
-         .nav-item .nav-link::before , .dropdown .btn::before {
-          content: "";
-          position: absolute;
-          width: 100%;
-          height: 2px; /* Adjust the thickness of the underline */
-          bottom: 0;
-          left: 0;
-        }
-         .nav-item .nav-link:hover::before  , .dropdown .btn:hover::before{
-          background-color: navy; 
-        }
-        #sign-up:hover::before , #log-in:hover::before{
-          background-color: initial;    /* remove underline setting */
-        }
+    .dropdown-item {
+      margin-bottom: 15px;
+    }
 
-        /*   */
+    .navbar-custom .dropdown .btn {
+      /* dropdown nav */
+      background-color: transparent;
+      border: none;
+      color: black;
+    }
 
-        #body-content{
-          background-image: url('https://wallpaperaccess.com/full/6242651.jpg');
-          background-repeat: no-repeat;
-          background-size: cover;   
-          height: clamp(40vh, 50vw, 120vh); 
-        }
-        #content-row{
-          height: clamp(35vh, 50vw, 150vh);
-        }
-        h1{
-          font-family: 'Roboto Slab', serif;
-          color: white;
-          font-size: clamp(13px, 5vw, 40px);
-          margin-top: clamp(110px, 20vw, 300px) ;
-          padding-bottom: clamp(1px, 2vw, 40px);
-        }
-        #keyword {
-          color: yellow;
-          font-family: 'Caveat', cursive;
-          font-size: clamp(16px, 5vw, 43px);
-        }
-        .quotes{
-          color: blueviolet;
-          font-family: 'Caveat', cursive;
-          font-size: clamp(20px, 5vw, 43px);
-          text-align: center;
-        }
-        .navigate-services{
-          color: white;
-          background-color: green;
-          font-size: clamp(10px, 3vw, 16px);
-          padding: 8px;
-          border: none;
-          border-radius: 5px;
-          box-shadow: 1px 1px 5px #000;
-        }
-        .navigate-services:hover{
-          background-color: darkgreen;
-          text-decoration: none;
-        }
-        #get-started{
-          padding: 10px 20px;
-          color: white;
-          background-color: green;
-          border: none;
-          border-radius: 3px;
-        }
-        #get-started:hover{
-          text-decoration: underline;
-          background-color: darkgreen;
-        }
-        #body-paragraph{
-          text-align: center;
-          font-size: clamp(10px, 4vw, 20px);
-          font-weight: bold;
-        }
-        .refer-brand{
-          color: Navy;
-          font-size: clamp(20px, 7vw, 30px);
-          font-style: italic;
-          font-weight: bold;
-        }
-        .body-image-texts{
-          padding-top: 20px;
-          font-size: 12px;
-        }
-        .short-messages > p{
-          margin-top: 20px;
-          margin-bottom: clamp(1px, 2vw, 20px);
-        }
-        .check-icon{
-          color: green;
-        }
+    #sign-up {
+      border: 1px solid #bbbcb8;
+      padding: 10px;
+    }
 
-        /*  footer section */
-        footer{
-          background-color: navy;          
-          width: 100%;
-        }
-        .quick-links{
-          list-style: none;
-          padding-left: 0;
-        }
-        ul[class ="quick-links"]> li {
-          margin-bottom: 10px;
-        }
-        ul[class ="quick-links"]> li >a {
-          color: lightblue;
-          font-size: clamp(13px, 5vw, 16px);
-        }
-        .social-icons , .store-icons {
-          font-size: clamp(14px, 4vw, 20px); 
-          margin-bottom: 16px;  /* to ensure spacing when it's responsive */
-        }
-        .icon {
-          margin-right: 10px;  
-        }
-        .icon:hover{
-          color: blue;
-        }
-        div[class="store-icons"] > a{
-          text-decoration: none;
-          font-size: clamp(14px, 4vw, 16px);
-        }
+    #sign-up:hover {
+      border: 1px solid navy;
+    }
 
+    #log-in {
+      color: white;
+      background-color: navy;
+      padding: 10px 15px;
+      box-shadow: 1px 1px 3px #000;
+    }
+
+    #log-in:hover {
+      background-color: #56179b;
+    }
+
+    /*  Navigation bar customization */
+
+    .nav-item,
+    .dropdown .btn {
+      position: relative;
+      padding: 0;
+      margin-right: 20px;
+    }
+
+    .nav-item .nav-link {
+      padding: 10px 0 10px 0;
+    }
+
+    .dropdown .btn {
+      padding: 10px 0 10px 0;
+    }
+
+    .nav-item .nav-link,
+    .dropdown .btn {
+      position: relative;
+    }
+
+    .nav-item .nav-link::before,
+    .dropdown .btn::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      /* Adjust the thickness of the underline */
+      bottom: 0;
+      left: 0;
+    }
+
+    .nav-item .nav-link:hover::before,
+    .dropdown .btn:hover::before {
+      background-color: navy;
+    }
+
+    #sign-up:hover::before,
+    #log-in:hover::before {
+      background-color: initial;
+      /* remove underline setting */
+    }
+
+    /*   */
+
+    #body-content {
+      background-image: url('https://wallpaperaccess.com/full/6242651.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: clamp(40vh, 50vw, 120vh);
+    }
+
+    #content-row {
+      height: clamp(35vh, 50vw, 150vh);
+    }
+
+    h1 {
+      font-family: 'Roboto Slab', serif;
+      color: white;
+      font-size: clamp(13px, 5vw, 40px);
+      margin-top: clamp(110px, 20vw, 300px);
+      padding-bottom: clamp(1px, 2vw, 40px);
+    }
+
+    #keyword {
+      color: yellow;
+      font-family: 'Caveat', cursive;
+      font-size: clamp(16px, 5vw, 43px);
+    }
+
+    .quotes {
+      color: blueviolet;
+      font-family: 'Caveat', cursive;
+      font-size: clamp(20px, 5vw, 43px);
+      text-align: center;
+    }
+
+    .navigate-services {
+      color: white;
+      background-color: green;
+      font-size: clamp(10px, 3vw, 16px);
+      padding: 8px;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 1px 1px 5px #000;
+    }
+
+    .navigate-services:hover {
+      background-color: darkgreen;
+      text-decoration: none;
+    }
+
+    #get-started {
+      padding: 10px 20px;
+      color: white;
+      background-color: green;
+      border: none;
+      border-radius: 3px;
+    }
+
+    #get-started:hover {
+      text-decoration: underline;
+      background-color: darkgreen;
+    }
+
+    #body-paragraph {
+      text-align: center;
+      font-size: clamp(10px, 4vw, 20px);
+      font-weight: bold;
+    }
+
+    .refer-brand {
+      color: Navy;
+      font-size: clamp(20px, 7vw, 30px);
+      font-style: italic;
+      font-weight: bold;
+    }
+
+    .body-image-texts {
+      padding-top: 20px;
+      font-size: 12px;
+    }
+
+    .short-messages>p {
+      margin-top: 20px;
+      margin-bottom: clamp(1px, 2vw, 20px);
+    }
+
+    .check-icon {
+      color: green;
+    }
+
+    /*  footer section */
+    footer {
+      background-color: navy;
+      width: 100%;
+    }
+
+    .quick-links {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul[class="quick-links"]>li {
+      margin-bottom: 10px;
+    }
+
+    ul[class="quick-links"]>li>a {
+      color: lightblue;
+      font-size: clamp(13px, 5vw, 16px);
+    }
+
+    .social-icons,
+    .store-icons {
+      font-size: clamp(14px, 4vw, 20px);
+      margin-bottom: 16px;
+      /* to ensure spacing when it's responsive */
+    }
+
+    .icon {
+      margin-right: 10px;
+    }
+
+    .icon:hover {
+      color: blue;
+    }
+
+    div[class="store-icons"]>a {
+      text-decoration: none;
+      font-size: clamp(14px, 4vw, 16px);
+    }
   </style>
 
 </head>
-<body >
 
-    <nav class="navbar navbar-expand-md  navbar-custom">
-        
-        <div class="container-fluid"> <!-- 1st div -->
-            <!-- Move the brand/logo to the left -->
-            <a class="navbar-brand" href="index.html" > 
-              <img src= "https://i.imgur.com/ByUlMbp.jpeg" id="brand-logo" alt="Logo" style="width:130px;"> 
-            </a>
+<body>
 
-            <!-- Create a separate div to hold the navigation items and align it to the right -->
-            <div class="ml-auto"> <!-- 2nd div -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" 
-                style="padding: 0;">
-                <span class="navbar-toggler-icon">
-                  <!-- using bootsrap svg for icon-->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M3 2.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
-                    </svg>
-                </span>
-                </button>
+  <nav class="navbar navbar-expand-md  navbar-custom">
 
-                <div class="collapse navbar-collapse" id="collapsibleNavbar"> <!-- 3rd div -->
+    <div class="container-fluid"> <!-- 1st div -->
+      <!-- Move the brand/logo to the left -->
+      <a class="navbar-brand" href="index.html">
+        <img src="https://i.imgur.com/ByUlMbp.jpeg" id="brand-logo" alt="Logo" style="width:130px;">
+      </a>
 
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                          
-                          <div class="dropdown">
-                              <div class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                Services & Products
-                              </div>
-                              <div class="dropdown-menu">
-                                <a class="dropdown-item" href="Recipes.html">Recipes</a>
-                                <a class="dropdown-item" href="BakeHomeSet.html">Bake-at-home sets</a>
-                                <a class="dropdown-item" href="Ingredients.html">Ingredients</a>
-                                <div class="dropdown-header" style="font-size: 13px; color:grey; padding:1;">
-                                Other items
-                                </div>
-                                <a class="dropdown-item" href="MealPlanner.html">Meal planners</a>
-                                <a class="dropdown-item" href="NutritionApps.html">Nutrition information apps</a>
-                                <a class="dropdown-item" href="WeeklyRecipes.html">Selection of weekly recipe choices</a>
-                                <a class="dropdown-item" href="Giftboxes.html">Giftboxes</a>
-                              </div>
-                            </div>
+      <!-- Create a separate div to hold the navigation items and align it to the right -->
+      <div class="ml-auto"> <!-- 2nd div -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"
+          style="padding: 0;">
+          <span class="navbar-toggler-icon">
+            <!-- using bootsrap svg for icon-->
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M3 2.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+            </svg>
+          </span>
+        </button>
 
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="Packages.html">Packages</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="SignUp.html" id="sign-up">Sign Up</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="LogIn.html" id="log-in">Log In</a>
-                        </li>
-                    </ul>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar"> <!-- 3rd div -->
 
-                </div> <!-- 3rd div -->
-            </div> <!-- 2nd div -->
-        </div> <!-- 1st div -->
-    </nav>
+          <ul class="navbar-nav">
+            <li class="nav-item">
 
-    
-    <div id="body-content"class="container-fluid">
-        <div id="content-row" class ="row">
-           <div class="col-sm-1"></div>
-           <div class="col-sm-11">
-            <h1>The secrect ingredient<br> is always <span id="keyword">LOVE!</span></h1> 
-            <a href="Recipes.html"><button type="button" class="navigate-services">See Our Services</button> </a>
-          </div>
-        </div>
-    </div>
-   
-   <br><br>
-   <p id="body-paragraph"> <span> What <span class="refer-brand">In a box</span> brings to you? </span> </p>
-
-   <div id ="body-image-area" class="container-fluid" style="background-color: #f8f8f8; padding-top:50px;">
-        <div class ="row" >
-           <div class="col-sm-4 text-center">
-             <p> Fresh and healty foods</p>
-             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Noun_Project_vegetables_icon_1422990_cc.svg/1200px-Noun_Project_vegetables_icon_1422990_cc.svg.png" style="width: 100px;">
-             <p class="body-image-texts">Our products are <br>at the standard of freshness</p>
-           </div>
-
-           <div class="col-sm-4 text-center">
-            <p> Easy-going meal plans</p>
-             <img src="https://cdn-icons-png.flaticon.com/512/7490/7490373.png" style="width: 100px;">
-             <p class="body-image-texts"> Customize your meal plans according<br> to your dietary requirements</p><br>
-           </div>
-
-           <div class="col-sm-4 text-center">
-             <p>Easy-to-follow recipes</p>
-             <img src="https://static.thenounproject.com/png/4303138-200.png" style="width: 100px;">
-             <p class="body-image-texts"> Explore our recipes. <br> Cook amazing meals in your home</p>
-           </div>
-
-        </div>
-
-        <div class ="row" > <!-- second row -->
-                <div class="col-sm-4 "></div>
-                <div class="col-sm-4 text-center">
-                     <a href="LogIn.html"><button type="button" id="get-started" >Get Started</button></a> <br><br><br>
+              <div class="dropdown">
+                <div class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                  Services & Products
                 </div>
-                <div class="col-sm-4 "></div>
-          </div>
-
-   </div><br><br>
-
-   <p class="quotes">Cooking is Love made visible.</p> <br><br>
-
-   <div class="container-fluid">
-        <div class ="row" style="display: flex; flex-wrap: wrap;">
-           <div class="col-sm-0 col-lg-1"></div>
-           <div class="col-sm-6 col-lg-5 ">    
-              <img src="https://i.pinimg.com/474x/96/e0/00/96e0006c7f3caa67b8426aca16349fca.jpg" style="width:clamp(200px, 38vw, 380px);">
-           </div>
-           <div class="col-sm-6 col-lg-5 ">
-              <div class="short-messages"> 
-                <p><span class="icon check-icon"><i class="fas fa-check"></i></span>Get delivered food boxes</p> 
-                <p><span class="icon check-icon"><i class="fas fa-check"></i></span>Cook amazing meals</p> 
-                <p><span class="icon check-icon"><i class="fas fa-check"></i></span>Easy to use cooking sets</p> 
-                <p><span class="icon check-icon"><i class="fas fa-check"></i></span>Get to know nutrition information</p>
-                <p><span class="icon check-icon"><i class="fas fa-check"></i></span>Faster delivery service</p>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="Recipes.html">Recipes</a>
+                  <a class="dropdown-item" href="BakeHomeSet.html">Bake-at-home sets</a>
+                  <a class="dropdown-item" href="Ingredients.html">Ingredients</a>
+                  <div class="dropdown-header" style="font-size: 13px; color:grey; padding:1;">
+                    Other items
+                  </div>
+                  <a class="dropdown-item" href="MealPlanner.html">Meal planners</a>
+                  <a class="dropdown-item" href="NutritionApps.html">Nutrition information apps</a>
+                  <a class="dropdown-item" href="WeeklyRecipes.html">Selection of weekly recipe choices</a>
+                  <a class="dropdown-item" href="Giftboxes.html">Giftboxes</a>
+                </div>
               </div>
-           </div>
+
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Packages.html">Packages</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="SignUp.html" id="sign-up">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="LogIn.html" id="log-in">Log In</a>
+            </li>
+          </ul>
+
+        </div> <!-- 3rd div -->
+      </div> <!-- 2nd div -->
+    </div> <!-- 1st div -->
+  </nav>
+
+
+  <div id="body-content" class="container-fluid">
+    <div id="content-row" class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-11">
+        <h1>The secrect ingredient<br> is always <span id="keyword">LOVE!</span></h1>
+        <a href="Recipes.html"><button type="button" class="navigate-services">See Our Services</button> </a>
+      </div>
+    </div>
+  </div>
+
+  <br><br>
+  <p id="body-paragraph"> <span> What <span class="refer-brand">In a box</span> brings to you? </span> </p>
+
+  <div id="body-image-area" class="container-fluid" style="background-color: #f8f8f8; padding-top:50px;">
+    <div class="row">
+      <div class="col-sm-4 text-center">
+        <p> Fresh and healty foods</p>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Noun_Project_vegetables_icon_1422990_cc.svg/1200px-Noun_Project_vegetables_icon_1422990_cc.svg.png"
+          style="width: 100px;">
+        <p class="body-image-texts">Our products are <br>at the standard of freshness</p>
+      </div>
+
+      <div class="col-sm-4 text-center">
+        <p> Easy-going meal plans</p>
+        <img src="https://cdn-icons-png.flaticon.com/512/7490/7490373.png" style="width: 100px;">
+        <p class="body-image-texts"> Customize your meal plans according<br> to your dietary requirements</p><br>
+      </div>
+
+      <div class="col-sm-4 text-center">
+        <p>Easy-to-follow recipes</p>
+        <img src="https://static.thenounproject.com/png/4303138-200.png" style="width: 100px;">
+        <p class="body-image-texts"> Explore our recipes. <br> Cook amazing meals in your home</p>
+      </div>
+
+    </div>
+
+    <div class="row"> <!-- second row -->
+      <div class="col-sm-4 "></div>
+      <div class="col-sm-4 text-center">
+        <a href="LogIn.html"><button type="button" id="get-started">Get Started</button></a> <br><br><br>
+      </div>
+      <div class="col-sm-4 "></div>
+    </div>
+
+  </div><br><br>
+
+  <p class="quotes">Cooking is Love made visible.</p> <br><br>
+
+  <div class="container-fluid">
+    <div class="row" style="display: flex; flex-wrap: wrap;">
+      <div class="col-sm-0 col-lg-1"></div>
+      <div class="col-sm-6 col-lg-5 ">
+        <img src="https://i.pinimg.com/474x/96/e0/00/96e0006c7f3caa67b8426aca16349fca.jpg"
+          style="width:clamp(200px, 38vw, 380px);">
+      </div>
+      <div class="col-sm-6 col-lg-5 ">
+        <div class="short-messages">
+          <p><span class="icon check-icon"><i class="fas fa-check"></i></span>Get delivered food boxes</p>
+          <p><span class="icon check-icon"><i class="fas fa-check"></i></span>Cook amazing meals</p>
+          <p><span class="icon check-icon"><i class="fas fa-check"></i></span>Easy to use cooking sets</p>
+          <p><span class="icon check-icon"><i class="fas fa-check"></i></span>Get to know nutrition information</p>
+          <p><span class="icon check-icon"><i class="fas fa-check"></i></span>Faster delivery service</p>
         </div>
-   </div><br><br><br>     
+      </div>
+    </div>
+  </div><br><br><br>
 
 
-<footer>
+  <footer>
 
     <br>
     <div class="container-fluid">
-        <div class ="row">
-             <div class="col-sm-2"></div>
-             <div class="col-sm-3">    
-                <p style="color: white; font-size: clamp(13px, 5vw, 16px);">Customer support</p>  
-                    <ul class="quick-links"> 
-                        <li> <a href="AboutUs.html">About us</a> </li>
-                        <li> <a href="AboutUs.html#contact-us">Contact us</a> </li>
-                    </ul>      
-             </div>           
-             <div class="col-sm-3">
-                <p style="color: white; font-size: clamp(13px, 5vw, 16px);">Follow us</p>
-                    <div class="social-icons">
-                      <a href="https://www.facebook.com/" class="icon"><i class="fab fa-facebook-f"></i></a>
-                      <a href="https://www.instagram.com/" class="icon"><i class="fab fa-instagram"></i></a>
-                      <a href="https://www.pinterest.com/" class="icon"><i class="fab fa-pinterest-p"></i></a>
-                      <a href="https://www.tiktok.com/" class="icon"><i class="fab fa-tiktok"></i></a>
-                    </div>
-             </div>
-             <div class="col-sm-3">
-                <p style="color: white; font-size: clamp(13px, 5vw, 16px);">Download our app</p>
-                    <div class="store-icons">
-                      <a href="https://play.google.com/" class="icon"><i class="fab fa-google-play"></i> Google play store</a>
-                      <br>
-                      <a href="https://www.apple.com/app-store/" class="icon"><i class="fab fa-apple"></i> App store</a>
-                    </div>
-             </div>
-             <div class="col-sm-1"></div>
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-3">
+          <p style="color: white; font-size: clamp(13px, 5vw, 16px);">Customer support</p>
+          <ul class="quick-links">
+            <li> <a href="AboutUs.html">About us</a> </li>
+            <li> <a href="AboutUs.html#contact-us">Contact us</a> </li>
+          </ul>
         </div>
+        <div class="col-sm-3">
+          <p style="color: white; font-size: clamp(13px, 5vw, 16px);">Follow us</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/" class="icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/" class="icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.pinterest.com/" class="icon"><i class="fab fa-pinterest-p"></i></a>
+            <a href="https://www.tiktok.com/" class="icon"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <p style="color: white; font-size: clamp(13px, 5vw, 16px);">Download our app</p>
+          <div class="store-icons">
+            <a href="https://play.google.com/" class="icon"><i class="fab fa-google-play"></i> Google play store</a>
+            <br>
+            <a href="https://www.apple.com/app-store/" class="icon"><i class="fab fa-apple"></i> App store</a>
+          </div>
+        </div>
+        <div class="col-sm-1"></div>
+      </div>
     </div> <br>
 
-</footer>
-    
+  </footer>
+
 </body>
+
 </html>

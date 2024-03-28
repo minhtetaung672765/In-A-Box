@@ -1,382 +1,444 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="C:/Bootstrap 4/css/bootstrap.min.css">
-    <script src="C:/Bootstrap 4/js/bootstrap.min.js"></script>
+  <!-- <link rel="stylesheet" href="C:/Bootstrap 4/css/bootstrap.min.css">
+    <script src="C:/Bootstrap 4/js/bootstrap.min.js"></script> -->
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"> <!--social icons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <!--social icons-->
 
 
-    <title>A Variety of Preserved Ingredients - In A Box</title>
+  <title>A Variety of Preserved Ingredients - In A Box</title>
 
-    <style type="text/css" >
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&family=PT+Serif:ital,wght@1,700&family=Caveat:wght@700&family=Open+Sans:wght@500&family=Montserrat:wght@500&display=swap');
 
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&family=PT+Serif:ital,wght@1,700&family=Caveat:wght@700&family=Open+Sans:wght@500&family=Montserrat:wght@500&display=swap');
+    .navbar-custom {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 500;
+      background-color: white;
+      padding: 15px 0;
+      border-bottom: 1px solid grey;
+    }
 
-        .navbar-custom {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 500;
-            background-color: white ; 
-            padding: 15px 0; 
-            border-bottom: 1px solid grey;
-        }       
-        .navbar-custom .nav-link, .navbar-custom .btn, .dropdown-item {
-            color: black;
-            font-family: 'Open Sans', sans-serif;
-        }
-        .dropdown-item{
-          margin-bottom: 15px;
-        }
-        .navbar-custom .dropdown .btn {  /* dropdown nav */
-            background-color: transparent; 
-            border: none;
-            color: black;
-        }
-        #sign-up{
-          border: 1px solid #bbbcb8;
-          padding: 10px;
-        }
-        #sign-up:hover{
-          border: 1px solid navy;
-        }
-        #log-in{
-          color: white;
-          background-color: navy;
-          padding: 10px 15px;
-          box-shadow: 1px 1px 3px #000;
-        }
-        #log-in:hover{
-          background-color: #56179b;
-        }
-        /*  Navigation bar customization */
+    .navbar-custom .nav-link,
+    .navbar-custom .btn,
+    .dropdown-item {
+      color: black;
+      font-family: 'Open Sans', sans-serif;
+    }
 
-         .nav-item , .dropdown .btn {
-          position: relative;
-          padding: 0;
-          margin-right: 20px;
-        }
-         .nav-item .nav-link{
-          padding: 10px 0 10px 0;
-        }
-         .dropdown .btn {
-          padding: 10px 0 10px 0;
-        }
-         .nav-item .nav-link , .dropdown .btn{
-          position: relative;
-        }
-         .nav-item .nav-link::before , .dropdown .btn::before {
-          content: "";
-          position: absolute;
-          width: 100%;
-          height: 2px; /* Adjust the thickness of the underline */
-          bottom: 0;
-          left: 0;
-        }
-         .nav-item .nav-link:hover::before  , .dropdown .btn:hover::before{
-          background-color: navy; 
-        }
-        #sign-up:hover::before , #log-in:hover::before{
-          background-color: initial;    /* remove underline setting */
-        }
+    .dropdown-item {
+      margin-bottom: 15px;
+    }
 
-        /*  footer section */
-        footer{
-          background-color: navy;          
-          width: 100%;
-        }
-        .quick-links{
-          list-style: none;
-          padding-left: 0;
-        }
-        ul[class ="quick-links"]> li {
-          margin-bottom: 10px;
-        }
-        ul[class ="quick-links"]> li >a {
-          color: lightblue;
-          font-size: clamp(13px, 5vw, 16px);
-        }
-        .social-icons , .store-icons {
-          font-size: clamp(14px, 4vw, 20px); 
-          margin-bottom: 16px;  /* to ensure spacing when it's responsive */
-        }
-        .icon {
-          margin-right: 10px;  
-        }
-        .icon:hover{
-          color: blue;
-        }
-        div[class="store-icons"] > a{
-          text-decoration: none;
-          font-size: clamp(14px, 4vw, 16px);
-        }
+    .navbar-custom .dropdown .btn {
+      /* dropdown nav */
+      background-color: transparent;
+      border: none;
+      color: black;
+    }
 
-        /* Body contents */
-  
-        h1{
-          text-align: center;
-          margin: 100px 0 50px 0;
-          font-size: clamp(20px, 3vw, 30px);
-          font-family: 'Roboto Slab', serif;
-        }
-        .card{
-          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
-          margin-bottom: 20px;
-        }
-        .card img{
-          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
-        }
-        .item-names{
-          font-family: 'Montserrat', sans-serif;
-          font-weight: bold;
-          text-align: center;
-          padding-top: 10px;
-        }
-        @media screen and (min-width: 545px) and (min-height: 600px) {
-          .item-names {
-          font-size: 10px;
-          }
-        }
-        .price{
-          color: green;
-          font-weight: bold;
-          font-size: 14px;
-          text-align: center;
-        }
+    #sign-up {
+      border: 1px solid #bbbcb8;
+      padding: 10px;
+    }
 
-        .buy-button{
-          border: none;
-          padding: 3px clamp(20px, 9vw, 90px);
-          text-align: center;
-          border-radius: 3px;
-          color: white;
-          background-color: royalblue;
-          margin: 0 0 8px 0;
-        }
-        @media (max-width: 1040px) {
-            .buy-button {
-                padding: 3px clamp(20px, 5vw, 70px);
-            }
-        }
-        /*@media screen and (max-width: 550px) and (max-height: 950px) {
+    #sign-up:hover {
+      border: 1px solid navy;
+    }
+
+    #log-in {
+      color: white;
+      background-color: navy;
+      padding: 10px 15px;
+      box-shadow: 1px 1px 3px #000;
+    }
+
+    #log-in:hover {
+      background-color: #56179b;
+    }
+
+    /*  Navigation bar customization */
+
+    .nav-item,
+    .dropdown .btn {
+      position: relative;
+      padding: 0;
+      margin-right: 20px;
+    }
+
+    .nav-item .nav-link {
+      padding: 10px 0 10px 0;
+    }
+
+    .dropdown .btn {
+      padding: 10px 0 10px 0;
+    }
+
+    .nav-item .nav-link,
+    .dropdown .btn {
+      position: relative;
+    }
+
+    .nav-item .nav-link::before,
+    .dropdown .btn::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      /* Adjust the thickness of the underline */
+      bottom: 0;
+      left: 0;
+    }
+
+    .nav-item .nav-link:hover::before,
+    .dropdown .btn:hover::before {
+      background-color: navy;
+    }
+
+    #sign-up:hover::before,
+    #log-in:hover::before {
+      background-color: initial;
+      /* remove underline setting */
+    }
+
+    /*  footer section */
+    footer {
+      background-color: navy;
+      width: 100%;
+    }
+
+    .quick-links {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul[class="quick-links"]>li {
+      margin-bottom: 10px;
+    }
+
+    ul[class="quick-links"]>li>a {
+      color: lightblue;
+      font-size: clamp(13px, 5vw, 16px);
+    }
+
+    .social-icons,
+    .store-icons {
+      font-size: clamp(14px, 4vw, 20px);
+      margin-bottom: 16px;
+      /* to ensure spacing when it's responsive */
+    }
+
+    .icon {
+      margin-right: 10px;
+    }
+
+    .icon:hover {
+      color: blue;
+    }
+
+    div[class="store-icons"]>a {
+      text-decoration: none;
+      font-size: clamp(14px, 4vw, 16px);
+    }
+
+    /* Body contents */
+
+    h1 {
+      text-align: center;
+      margin: 100px 0 50px 0;
+      font-size: clamp(20px, 3vw, 30px);
+      font-family: 'Roboto Slab', serif;
+    }
+
+    .card {
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+    }
+
+    .card img {
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .item-names {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: bold;
+      text-align: center;
+      padding-top: 10px;
+    }
+
+    @media screen and (min-width: 545px) and (min-height: 600px) {
+      .item-names {
+        font-size: 10px;
+      }
+    }
+
+    .price {
+      color: green;
+      font-weight: bold;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .buy-button {
+      border: none;
+      padding: 3px clamp(20px, 9vw, 90px);
+      text-align: center;
+      border-radius: 3px;
+      color: white;
+      background-color: royalblue;
+      margin: 0 0 8px 0;
+    }
+
+    @media (max-width: 1040px) {
+      .buy-button {
+        padding: 3px clamp(20px, 5vw, 70px);
+      }
+    }
+
+    /*@media screen and (max-width: 550px) and (max-height: 950px) {
           .buy-button {
           padding: 3px 90px; 
 
           }
         }*/
 
-        .buy-button:hover{
-          background-color: darkgreen;
-        }
-        .view-more-button{
-          color: white;
-          background-color: navy;
-          border-radius: 3px;
-          font-size: clamp(12px, 2vw, 16px);
-          padding: 3px 5px;
-          margin-top: 8px ;
-        }
-        .view-more-button:hover{
-          background-color: darkgreen;
-        }
-        .fa-arrow-right {
-          margin-left: 10px; 
-        }
+    .buy-button:hover {
+      background-color: darkgreen;
+    }
 
+    .view-more-button {
+      color: white;
+      background-color: navy;
+      border-radius: 3px;
+      font-size: clamp(12px, 2vw, 16px);
+      padding: 3px 5px;
+      margin-top: 8px;
+    }
 
-</style>
+    .view-more-button:hover {
+      background-color: darkgreen;
+    }
+
+    .fa-arrow-right {
+      margin-left: 10px;
+    }
+  </style>
 
 </head>
+
 <body>
 
-    <nav class="navbar navbar-expand-md  navbar-custom">
-        
-        <div class="container-fluid"> <!-- 1st div -->
-            <!-- Move the brand/logo to the left -->
-            <a class="navbar-brand" href="index.html" > 
-              <img src= "https://i.imgur.com/ByUlMbp.jpeg" id="brand-logo" alt="Logo" style="width:130px;"> 
-            </a>
+  <nav class="navbar navbar-expand-md  navbar-custom">
 
-            <!-- Create a separate div to hold the navigation items and align it to the right -->
-            <div class="ml-auto"> <!-- 2nd div -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" 
-                style="padding: 0;">
-                <span class="navbar-toggler-icon">
-                  <!-- using bootsrap svg for icon-->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M3 2.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
-                    </svg>
-                </span>
-                </button>
+    <div class="container-fluid"> <!-- 1st div -->
+      <!-- Move the brand/logo to the left -->
+      <a class="navbar-brand" href="index.html">
+        <img src="https://i.imgur.com/ByUlMbp.jpeg" id="brand-logo" alt="Logo" style="width:130px;">
+      </a>
 
-                <div class="collapse navbar-collapse" id="collapsibleNavbar"> <!-- 3rd div -->
+      <!-- Create a separate div to hold the navigation items and align it to the right -->
+      <div class="ml-auto"> <!-- 2nd div -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"
+          style="padding: 0;">
+          <span class="navbar-toggler-icon">
+            <!-- using bootsrap svg for icon-->
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M3 2.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+            </svg>
+          </span>
+        </button>
 
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                          
-                          <div class="dropdown">
-                              <div class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                Services & Products
-                              </div>
-                              <div class="dropdown-menu">
-                                <a class="dropdown-item" href="Recipes.html">Recipes</a>
-                                <a class="dropdown-item" href="BakeHomeSet.html">Bake-at-home sets</a>
-                                <a class="dropdown-item" href="Ingredients.html">Ingredients</a>
-                                <div class="dropdown-header" style="font-size: 13px; color:grey; padding:1;">
-                                Other items
-                                </div>
-                                <a class="dropdown-item" href="MealPlanner.html">Meal planners</a>
-                                <a class="dropdown-item" href="NutritionApps.html">Nutrition information apps</a>
-                                <a class="dropdown-item" href="WeeklyRecipes.html">Selection of weekly recipe choices</a>
-                                <a class="dropdown-item" href="Giftboxes.html">Giftboxes</a>
-                              </div>
-                            </div>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar"> <!-- 3rd div -->
 
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="Packages.html">Packages</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="SignUp.html" id="sign-up">Sign Up</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="LogIn.html" id="log-in">Log In</a>
-                        </li>
-                    </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
 
-                </div> <!-- 3rd div -->
-            </div> <!-- 2nd div -->
-        </div> <!-- 1st div -->
-    </nav>
+              <div class="dropdown">
+                <div class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                  Services & Products
+                </div>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="Recipes.html">Recipes</a>
+                  <a class="dropdown-item" href="BakeHomeSet.html">Bake-at-home sets</a>
+                  <a class="dropdown-item" href="Ingredients.html">Ingredients</a>
+                  <div class="dropdown-header" style="font-size: 13px; color:grey; padding:1;">
+                    Other items
+                  </div>
+                  <a class="dropdown-item" href="MealPlanner.html">Meal planners</a>
+                  <a class="dropdown-item" href="NutritionApps.html">Nutrition information apps</a>
+                  <a class="dropdown-item" href="WeeklyRecipes.html">Selection of weekly recipe choices</a>
+                  <a class="dropdown-item" href="Giftboxes.html">Giftboxes</a>
+                </div>
+              </div>
 
-<!-- Start of body contents-->
-    
-      <h1> Preserved Ingredients</h1>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Packages.html">Packages</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="SignUp.html" id="sign-up">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="LogIn.html" id="log-in">Log In</a>
+            </li>
+          </ul>
 
-      <div id="body-content" class="container-fluid">
+        </div> <!-- 3rd div -->
+      </div> <!-- 2nd div -->
+    </div> <!-- 1st div -->
+  </nav>
+
+  <!-- Start of body contents-->
+
+  <h1> Preserved Ingredients</h1>
+
+  <div id="body-content" class="container-fluid">
+
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-10">
+
+        <div class="container-fluid"> <!-- Start of 2nd-container -->
 
           <div class="row">
-              <div class="col-sm-1"></div>
-              <div class="col-sm-10">
+            <div class="col-sm-3 text-center">
+              <div class="card">
+                <img
+                  src="https://pyxis.nymag.com/v1/imgs/0cd/987/9ecfd0f2931bc8216f72b145ba31b7fdc2-pasta-sauce-lede.rsquare.w700.jpg"
+                  style="width: 100%;" alt="Sauce">
+                <p class="item-names">Tomato Sauce</p>
+                <p class="price">12$</p>
+                <a href="LogIn.html"><button type="button" class="buy-button">Buy</button></a>
+              </div>
+            </div>
+            <div class="col-sm-3 text-center">
+              <div class="card">
+                <img src="https://altouheedfood.com/wp-content/uploads/2023/01/ExtraVirginOliveOil.webp"
+                  style="  width: 100%;" alt="oil">
+                <p class="item-names">Olive oil</p>
+                <p class="price">21$</p>
+                <a href="LogIn.html"><button type="button" class="buy-button">Buy</button></a>
+              </div>
+            </div>
+            <div class="col-sm-3 text-center">
+              <div class="card">
+                <img src="https://itsnotcomplicatedrecipes.com/wp-content/uploads/2022/01/Strawberry-Jam-Feature.jpg"
+                  style="  width: 100%;" alt="Jam">
+                <p class="item-names">Strawberry Jam</p>
+                <p class="price">18$</p>
+                <a href="LogIn.html"><button type="button" class="buy-button">Buy</button></a>
+              </div>
+            </div>
+            <div class="col-sm-3 text-center">
+              <div class="card">
+                <img src="https://m.media-amazon.com/images/I/81vMwAunu-L.jpg" style="  width: 100%;" alt="Beans">
+                <p class="item-names">Canned Beans</p>
+                <p class="price">6$</p>
+                <a href="LogIn.html"><button type="button" class="buy-button">Buy</button></a>
+              </div>
+            </div>
+          </div><br><br>
 
-               		<div  class="container-fluid">  <!-- Start of 2nd-container -->
+          <div class="row"> <!-- 2rd row -->
+            <div class="col-sm-3 text-center">
+              <div class="card">
+                <img
+                  src="https://www.vlasic.com/sites/g/files/qyyrlu671/files/images/products/snackmms-kosher-dill-pickles-81104.png"
+                  style="width: 100%;" alt="Pickles">
+                <p class="item-names">Pickles</p>
+                <p class="price">8$</p>
+                <a href="LogIn.html"><button type="button" class="buy-button">Buy</button></a>
+              </div>
+            </div>
+            <div class="col-sm-3 text-center">
+              <div class="card">
+                <img
+                  src="https://southchinaseas.ca/cdn/shop/products/coconut-milk-organic-aroy-d-south-china-seas-trading-co_32eb312f-fb8f-4238-b57a-7eaa3550937a_1200x1200.jpg?v=1656962288"
+                  style="  width: 100%;" alt="Canned Coconut Milk">
+                <p class="item-names">Canned Coconut Milk</p>
+                <p class="price">10$</p>
+                <a href="LogIn.html"><button type="button" class="buy-button">Buy</button></a>
+              </div>
+            </div>
+            <div class="col-sm-3 text-center">
+              <div class="card">
+                <img src="https://www.sanford.com.tr/wp-content/uploads/2019/10/Dried-Figs-Spread-with-Orange-WEB.jpg"
+                  style="  width: 100%;" alt="Jam">
+                <p class="item-names">Orange Jam</p>
+                <p class="price">13$</p>
+                <a href="LogIn.html"><button type="button" class="buy-button">Buy</button></a>
+              </div>
+            </div>
+            <div class="col-sm-3 text-center">
+              <div class="card">
+                <img src="https://www.thepetitecook.com/wp-content/uploads/2019/06/homemade-ketchup.jpg"
+                  style="  width: 100%;" alt="Ketchup">
+                <p class="item-names">Ketchup</p>
+                <p class="price">8$</p>
+                <a href="LogIn.html"><button type="button" class="buy-button">Buy</button></a>
+              </div>
+            </div>
+          </div>
+        </div> <!-- End of 2nd-container -->
 
-            		    <div class="row">
-            		        <div class="col-sm-3 text-center">
-            		        	<div class="card">
-            			            <img src="https://pyxis.nymag.com/v1/imgs/0cd/987/9ecfd0f2931bc8216f72b145ba31b7fdc2-pasta-sauce-lede.rsquare.w700.jpg" style="width: 100%;"
-                               alt="Sauce">
-                              <p class="item-names">Tomato Sauce</p><p class="price">12$</p>
-            			            <a  href="LogIn.html"><button type="button" class="buy-button">Buy</button></a>
-            		        	</div>
-            		        </div>
-            		        <div class="col-sm-3 text-center">
-            		        	<div class="card">
-            			            <img src="https://altouheedfood.com/wp-content/uploads/2023/01/ExtraVirginOliveOil.webp" style="  width: 100%;" alt="oil">
-                              <p class="item-names">Olive oil</p><p class="price">21$</p>
-            			            <a  href="LogIn.html"><button type="button" class="buy-button">Buy</button></a>
-            			        </div>
-            		        </div>
-                        <div class="col-sm-3 text-center">
-                          <div class="card">
-                              <img src="https://itsnotcomplicatedrecipes.com/wp-content/uploads/2022/01/Strawberry-Jam-Feature.jpg" style="  width: 100%;" alt="Jam">
-                              <p class="item-names">Strawberry Jam</p><p class="price">18$</p>
-                              <a  href="LogIn.html"><button type="button" class="buy-button">Buy</button></a>
-                          </div>
-                        </div>
-                        <div class="col-sm-3 text-center">
-                          <div class="card">
-                              <img src="https://m.media-amazon.com/images/I/81vMwAunu-L.jpg" style="  width: 100%;" alt="Beans">
-                              <p class="item-names">Canned Beans</p><p class="price">6$</p>
-                              <a  href="LogIn.html"><button type="button" class="buy-button">Buy</button></a>
-                          </div>
-                        </div>
-            		    </div><br><br>
+      </div>
+      <div class="col-sm-1"></div>
 
-                    <div class="row">    <!-- 2rd row -->
-                        <div class="col-sm-3 text-center">
-                          <div class="card">
-                              <img src="https://www.vlasic.com/sites/g/files/qyyrlu671/files/images/products/snackmms-kosher-dill-pickles-81104.png" style="width: 100%;"
-                               alt="Pickles">
-                              <p class="item-names">Pickles</p><p class="price">8$</p>
-                              <a  href="LogIn.html"><button type="button" class="buy-button">Buy</button></a>
-                          </div>
-                        </div>
-                        <div class="col-sm-3 text-center">
-                          <div class="card">
-                              <img src="https://southchinaseas.ca/cdn/shop/products/coconut-milk-organic-aroy-d-south-china-seas-trading-co_32eb312f-fb8f-4238-b57a-7eaa3550937a_1200x1200.jpg?v=1656962288" style="  width: 100%;" alt="Canned Coconut Milk">
-                              <p class="item-names">Canned Coconut Milk</p><p class="price">10$</p>
-                              <a  href="LogIn.html"><button type="button" class="buy-button">Buy</button></a>
-                          </div>
-                        </div>
-                        <div class="col-sm-3 text-center">
-                          <div class="card">
-                              <img src="https://www.sanford.com.tr/wp-content/uploads/2019/10/Dried-Figs-Spread-with-Orange-WEB.jpg" style="  width: 100%;" alt="Jam">
-                              <p class="item-names">Orange Jam</p><p class="price">13$</p>
-                              <a  href="LogIn.html"><button type="button" class="buy-button">Buy</button></a>
-                          </div>
-                        </div>
-                        <div class="col-sm-3 text-center">
-                          <div class="card">
-                              <img src="https://www.thepetitecook.com/wp-content/uploads/2019/06/homemade-ketchup.jpg" style="  width: 100%;" alt="Ketchup">
-                              <p class="item-names">Ketchup</p><p class="price">8$</p>
-                              <a  href="LogIn.html"><button type="button" class="buy-button">Buy</button></a>
-                          </div>
-                        </div>
-                    </div>
-            		</div>    <!-- End of 2nd-container -->
-
-            </div> 
-            <div class="col-sm-1"></div>
-
-        </div>
     </div>
-    <br><br>
+  </div>
+  <br><br>
 
-<footer>
+  <footer>
 
     <br>
     <div class="container-fluid">
-        <div class ="row">
-             <div class="col-sm-2"></div>
-             <div class="col-sm-3">    
-                <p style="color: white; font-size: clamp(13px, 5vw, 16px);">Customer support</p>  
-                    <ul class="quick-links"> 
-                        <li> <a href="AboutUs.html">About us</a> </li>
-                        <li> <a href="AboutUs.html#contact-us">Contact us</a> </li>
-                    </ul>      
-             </div>           
-             <div class="col-sm-3">
-                <p style="color: white; font-size: clamp(13px, 5vw, 16px);">Follow us</p>
-                    <div class="social-icons">
-                      <a href="https://www.facebook.com/" class="icon"><i class="fab fa-facebook-f"></i></a>
-                      <a href="https://www.instagram.com/" class="icon"><i class="fab fa-instagram"></i></a>
-                      <a href="https://www.pinterest.com/" class="icon"><i class="fab fa-pinterest-p"></i></a>
-                      <a href="https://www.tiktok.com/" class="icon"><i class="fab fa-tiktok"></i></a>
-                    </div>
-             </div>
-             <div class="col-sm-3">
-                <p style="color: white; font-size: clamp(13px, 5vw, 16px);">Download our app</p>
-                    <div class="store-icons">
-                      <a href="https://play.google.com/" class="icon"><i class="fab fa-google-play"></i> Google play store</a>
-                      <br>
-                      <a href="https://www.apple.com/app-store/" class="icon"><i class="fab fa-apple"></i> App store</a>
-                    </div>
-             </div>
-             <div class="col-sm-1"></div>
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-3">
+          <p style="color: white; font-size: clamp(13px, 5vw, 16px);">Customer support</p>
+          <ul class="quick-links">
+            <li> <a href="AboutUs.html">About us</a> </li>
+            <li> <a href="AboutUs.html#contact-us">Contact us</a> </li>
+          </ul>
         </div>
+        <div class="col-sm-3">
+          <p style="color: white; font-size: clamp(13px, 5vw, 16px);">Follow us</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/" class="icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/" class="icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.pinterest.com/" class="icon"><i class="fab fa-pinterest-p"></i></a>
+            <a href="https://www.tiktok.com/" class="icon"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <p style="color: white; font-size: clamp(13px, 5vw, 16px);">Download our app</p>
+          <div class="store-icons">
+            <a href="https://play.google.com/" class="icon"><i class="fab fa-google-play"></i> Google play store</a>
+            <br>
+            <a href="https://www.apple.com/app-store/" class="icon"><i class="fab fa-apple"></i> App store</a>
+          </div>
+        </div>
+        <div class="col-sm-1"></div>
+      </div>
     </div> <br>
 
-</footer>
-    
+  </footer>
+
 </body>
+
 </html>
